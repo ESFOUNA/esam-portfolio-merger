@@ -78,11 +78,18 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  
+  @font-face {
+    font-family: 'Arial Black';
+    src: local('Arial Black');
+    font-weight: bold;
+    font-style: normal;
+  }
 }
 
 /* Custom styles */
 .glass {
-  @apply bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-10 shadow-lg;
+  @apply bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-10 shadow-lg dark:bg-black dark:bg-opacity-10;
 }
 
 .text-balance {
