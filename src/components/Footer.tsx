@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from './ThemeToggle';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -15,7 +16,7 @@ export function Footer() {
     <footer className="py-10 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center gap-4">
-          <div className="text-center">
+          <div className="flex items-center justify-center gap-4">
             <Button
               variant="outline"
               size="icon"
@@ -25,6 +26,8 @@ export function Footer() {
             >
               <ArrowUp className="h-5 w-5" />
             </Button>
+            
+            <ThemeToggle />
           </div>
           
           <div className="flex items-center gap-2">

@@ -13,6 +13,19 @@ const Index = () => {
   useEffect(() => {
     document.title = 'ESAM | Software Engineer';
     
+    // Check if user has a theme preference
+    const userTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    
+    // Apply theme
+    if (userTheme === 'dark' || (!userTheme && systemTheme === 'dark')) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+    
     // Animation on scroll effect
     const observerOptions = {
       root: null,
@@ -41,7 +54,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Navbar />
       <main>
         <HeroSection />
