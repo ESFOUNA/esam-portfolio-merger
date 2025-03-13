@@ -62,7 +62,7 @@ export function HeroSection() {
     >
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-blue-50 to-slate-50 dark:from-blue-950 dark:to-slate-950"></div>
       
-      {/* Floating shapes for background */}
+      {/* Moving shapes for background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -84,10 +84,9 @@ export function HeroSection() {
                 Math.random() * 100 - 50 + "%", 
                 Math.random() * 100 - 50 + "%"
               ],
-              rotate: [0, 180, 360]
             }}
             transition={{ 
-              duration: Math.random() * 50 + 50,
+              duration: Math.random() * 30 + 20,
               repeat: Infinity,
               ease: "linear" 
             }}
@@ -103,7 +102,7 @@ export function HeroSection() {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
-          <TiltCard className="mb-8" backgroundClass="glass">
+          <TiltCard className="mb-8">
             <motion.div
               variants={container}
               initial="hidden"

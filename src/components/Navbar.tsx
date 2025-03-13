@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, RefreshCw } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import { motion } from 'framer-motion';
 
 interface NavItem {
   label: string;
@@ -42,9 +43,39 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <span className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'Arial Black, sans-serif' }}>
-            ESAM
-          </span>
+          <motion.div
+            className="flex items-center"
+            whileHover={{ scale: 1.05 }}
+          >
+            {/* Animated logo */}
+            <motion.div 
+              className="mr-2 flex items-center justify-center bg-primary text-primary-foreground rounded-full w-8 h-8"
+              animate={{ 
+                rotate: [0, 360],
+              }}
+              transition={{ 
+                duration: 10, 
+                repeat: Infinity,
+                ease: "linear" 
+              }}
+            >
+              <RefreshCw className="h-4 w-4" />
+            </motion.div>
+            <motion.span 
+              className="text-2xl font-bold tracking-tight" 
+              style={{ fontFamily: 'Arial Black, sans-serif' }}
+              animate={{ 
+                color: ['hsl(var(--foreground))', 'hsl(var(--primary))', 'hsl(var(--foreground))'] 
+              }}
+              transition={{ 
+                duration: 5, 
+                repeat: Infinity,
+                ease: "easeInOut" 
+              }}
+            >
+              ESAM
+            </motion.span>
+          </motion.div>
         </a>
 
         {/* Desktop navigation */}

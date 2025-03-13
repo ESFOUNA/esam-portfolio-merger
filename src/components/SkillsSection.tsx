@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 
@@ -47,15 +47,31 @@ export function SkillsSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
+        whileHover={{ 
+          y: -5,
+          boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+        }}
         transition={{ 
-          duration: 0.5, 
+          duration: 0.3,
           delay: title === "Languages" ? 0 : 
                 title === "Frameworks" ? 0.1 : 
                 title === "Web Technologies" ? 0.2 : 
                 title === "Mobile Development" ? 0.3 : 0.4 
         }}
       >
-        <h3 className="text-xl font-bold mb-6 text-center">{title}</h3>
+        <motion.h3 
+          className="text-xl font-bold mb-6 text-center"
+          animate={{ 
+            scale: [1, 1.03, 1],
+          }}
+          transition={{ 
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          {title}
+        </motion.h3>
         <div className="space-y-6">
           {skillsToRender.map((skill, index) => (
             <motion.div 
@@ -63,12 +79,17 @@ export function SkillsSection() {
               className="space-y-2"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ x: 5 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 flex-shrink-0">
+                  <motion.div 
+                    className="w-6 h-6 flex-shrink-0"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.7 }}
+                  >
                     <img 
                       src={skill.image} 
                       alt={`${skill.name} logo`} 
@@ -78,7 +99,7 @@ export function SkillsSection() {
                         (e.target as HTMLImageElement).src = 'https://via.placeholder.com/30?text=' + skill.name.charAt(0);
                       }}
                     />
-                  </div>
+                  </motion.div>
                   <span className="font-medium">{skill.name}</span>
                 </div>
                 <span className="text-sm text-muted-foreground">{skill.level}%</span>
@@ -94,10 +115,18 @@ export function SkillsSection() {
                   className="bg-primary h-full rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
+                  animate={{
+                    boxShadow: ["0 0 2px rgba(var(--primary-rgb), 0.5)", "0 0 8px rgba(var(--primary-rgb), 0.8)", "0 0 2px rgba(var(--primary-rgb), 0.5)"]
+                  }}
                   transition={{ 
                     duration: 0.8,
                     delay: 0.4 + index * 0.05,
-                    ease: "easeOut"
+                    ease: "easeOut",
+                    boxShadow: {
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
                   }}
                   viewport={{ once: true }}
                 ></motion.div>
@@ -116,7 +145,14 @@ export function SkillsSection() {
           className="text-3xl font-bold font-serif text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          animate={{
+            y: [0, -5, 0]
+          }}
+          transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut" 
+          }}
           viewport={{ once: true }}
         >
           Skills
@@ -146,19 +182,36 @@ export function SkillsSection() {
             className="mt-12 glass rounded-xl p-6 shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -5 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-6 text-center">All Skills</h3>
+            <motion.h3 
+              className="text-xl font-bold mb-6 text-center"
+              animate={{ 
+                scale: [1, 1.03, 1],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              All Skills
+            </motion.h3>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ 
+                    scale: 1.1, 
+                    y: -5,
+                    transition: { duration: 0.2 }
+                  }}
                   transition={{ 
-                    duration: 0.2,
+                    duration: 0.3,
                     delay: index * 0.02
                   }}
                 >
@@ -166,7 +219,16 @@ export function SkillsSection() {
                     variant="secondary" 
                     className="text-sm flex items-center gap-1 p-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                   >
-                    <div className="w-4 h-4 flex-shrink-0">
+                    <motion.div 
+                      className="w-4 h-4 flex-shrink-0"
+                      animate={{ rotate: [0, 360] }}
+                      transition={{ 
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear",
+                        delay: index * 0.5
+                      }}
+                    >
                       <img 
                         src={skill.image} 
                         alt={`${skill.name} logo`} 
@@ -176,7 +238,7 @@ export function SkillsSection() {
                           (e.target as HTMLImageElement).src = 'https://via.placeholder.com/20?text=' + skill.name.charAt(0);
                         }}
                       />
-                    </div>
+                    </motion.div>
                     {skill.name}
                   </Badge>
                 </motion.div>
