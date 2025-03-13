@@ -32,27 +32,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animation variants for the falling letters
-  const letterVariants = {
-    hidden: { 
-      y: -100,
-      opacity: 0
-    },
-    visible: (i: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100
-      }
-    })
-  };
-
-  // The name to be animated
-  const name = "ESAM";
-
   return (
     <header
       className={cn(
@@ -68,9 +47,9 @@ export function Navbar() {
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            {/* Animated logo icon */}
+            {/* Animated logo icon - updated to be visible in dark mode */}
             <motion.div 
-              className="mr-2 flex items-center justify-center bg-primary text-primary-foreground rounded-full w-8 h-8"
+              className="flex items-center justify-center bg-primary text-primary-foreground rounded-full w-10 h-10 shadow-md"
               animate={{ 
                 rotate: [0, 360],
               }}
@@ -80,31 +59,8 @@ export function Navbar() {
                 ease: "linear" 
               }}
             >
-              <RefreshCw className="h-4 w-4" />
+              <RefreshCw className="h-5 w-5" />
             </motion.div>
-            
-            {/* Animated text with falling letters effect */}
-            <div className="flex overflow-hidden">
-              {name.split('').map((letter, i) => (
-                <motion.span 
-                  key={i}
-                  custom={i}
-                  variants={letterVariants}
-                  initial="hidden"
-                  animate="visible"
-                  style={{ fontFamily: 'Arial Black, sans-serif' }}
-                  className="text-2xl font-bold"
-                  // After appearing, letters continue with a subtle bounce effect
-                  whileHover={{
-                    y: -5,
-                    color: "hsl(var(--primary))",
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </div>
           </motion.div>
         </a>
 
