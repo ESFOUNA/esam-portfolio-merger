@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
+import { motion } from 'framer-motion';
 
 interface Skill {
   name: string;
@@ -39,47 +40,87 @@ export function SkillsSection() {
   const mobile = skills.filter(skill => skill.category === 'mobile');
   const distributed = skills.filter(skill => skill.category === 'distributed');
 
-  const renderSkillCard = (title: string, skillsToRender: Skill[]) => (
-    <div className="glass rounded-xl p-6 shadow-lg animate-on-scroll">
-      <h3 className="text-xl font-bold mb-6 text-center">{title}</h3>
-      <div className="space-y-6">
-        {skillsToRender.map((skill) => (
-          <div key={skill.name} className="space-y-2">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 flex-shrink-0">
-                  <img 
-                    src={skill.image} 
-                    alt={`${skill.name} logo`} 
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://via.placeholder.com/30?text=' + skill.name.charAt(0);
-                    }}
-                  />
+  const renderSkillCard = (title: string, skillsToRender: Skill[]) => {
+    return (
+      <motion.div 
+        className="glass rounded-xl p-6 shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ 
+          duration: 0.5, 
+          delay: title === "Languages" ? 0 : 
+                title === "Frameworks" ? 0.1 : 
+                title === "Web Technologies" ? 0.2 : 
+                title === "Mobile Development" ? 0.3 : 0.4 
+        }}
+      >
+        <h3 className="text-xl font-bold mb-6 text-center">{title}</h3>
+        <div className="space-y-6">
+          {skillsToRender.map((skill, index) => (
+            <motion.div 
+              key={skill.name} 
+              className="space-y-2"
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 flex-shrink-0">
+                    <img 
+                      src={skill.image} 
+                      alt={`${skill.name} logo`} 
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/30?text=' + skill.name.charAt(0);
+                      }}
+                    />
+                  </div>
+                  <span className="font-medium">{skill.name}</span>
                 </div>
-                <span className="font-medium">{skill.name}</span>
+                <span className="text-sm text-muted-foreground">{skill.level}%</span>
               </div>
-              <span className="text-sm text-muted-foreground">{skill.level}%</span>
-            </div>
-            <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
-              <div 
-                className="bg-primary h-full rounded-full transition-all duration-1000 ease-out" 
-                style={{ width: `${skill.level}%` }}
-              ></div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+              <motion.div 
+                className="w-full bg-secondary rounded-full h-2 overflow-hidden"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.05 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className="bg-primary h-full rounded-full"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: 0.4 + index * 0.05,
+                    ease: "easeOut"
+                  }}
+                  viewport={{ once: true }}
+                ></motion.div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    );
+  };
 
   return (
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold font-serif text-center mb-12 animate-on-scroll">
+        <motion.h2 
+          className="text-3xl font-bold font-serif text-center mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           Skills
-        </h2>
+        </motion.h2>
         
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -101,27 +142,47 @@ export function SkillsSection() {
             {renderSkillCard("Distributed Systems", distributed)}
           </div>
 
-          <div className="mt-12 glass rounded-xl p-6 shadow-lg animate-on-scroll">
+          <motion.div 
+            className="mt-12 glass rounded-xl p-6 shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-xl font-bold mb-6 text-center">All Skills</h3>
             <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <Badge key={skill.name} variant="secondary" className="text-sm flex items-center gap-1 p-2">
-                  <div className="w-4 h-4 flex-shrink-0">
-                    <img 
-                      src={skill.image} 
-                      alt={`${skill.name} logo`} 
-                      className="w-full h-full object-contain"
-                      loading="lazy"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/20?text=' + skill.name.charAt(0);
-                      }}
-                    />
-                  </div>
-                  {skill.name}
-                </Badge>
+              {skills.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ 
+                    duration: 0.2,
+                    delay: index * 0.02
+                  }}
+                >
+                  <Badge 
+                    variant="secondary" 
+                    className="text-sm flex items-center gap-1 p-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  >
+                    <div className="w-4 h-4 flex-shrink-0">
+                      <img 
+                        src={skill.image} 
+                        alt={`${skill.name} logo`} 
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = 'https://via.placeholder.com/20?text=' + skill.name.charAt(0);
+                        }}
+                      />
+                    </div>
+                    {skill.name}
+                  </Badge>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
