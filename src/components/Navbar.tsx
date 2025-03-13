@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Menu, X, RefreshCw } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { motion } from 'framer-motion';
 
@@ -32,6 +32,27 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Animation variants for the falling letters
+  const letterVariants = {
+    hidden: { 
+      y: -100,
+      opacity: 0
+    },
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.6,
+        type: "spring",
+        stiffness: 100
+      }
+    })
+  };
+
+  // The name to be animated
+  const name = "ESAM";
+
   return (
     <header
       className={cn(
@@ -47,20 +68,28 @@ export function Navbar() {
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            {/* Animated logo icon - updated to be visible in dark mode */}
-            <motion.div 
-              className="flex items-center justify-center bg-primary text-primary-foreground rounded-full w-10 h-10 shadow-md"
-              animate={{ 
-                rotate: [0, 360],
-              }}
-              transition={{ 
-                duration: 10, 
-                repeat: Infinity,
-                ease: "linear" 
-              }}
-            >
-              <RefreshCw className="h-5 w-5" />
-            </motion.div>
+            {/* Animated text with falling letters effect */}
+            <div className="flex overflow-hidden">
+              {name.split('').map((letter, i) => (
+                <motion.span 
+                  key={i}
+                  custom={i}
+                  variants={letterVariants}
+                  initial="hidden"
+                  animate="visible"
+                  style={{ fontFamily: 'Arial Black, sans-serif' }}
+                  className="text-2xl font-bold"
+                  // After appearing, letters continue with a subtle bounce effect
+                  whileHover={{
+                    y: -5,
+                    color: "hsl(var(--primary))",
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div>
           </motion.div>
         </a>
 
