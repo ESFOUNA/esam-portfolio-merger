@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Menu, X, RefreshCw } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { motion } from 'framer-motion';
 
@@ -68,21 +68,6 @@ export function Navbar() {
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            {/* Animated logo icon */}
-            <motion.div 
-              className="mr-2 flex items-center justify-center bg-primary text-primary-foreground rounded-full w-8 h-8"
-              animate={{ 
-                rotate: [0, 360],
-              }}
-              transition={{ 
-                duration: 10, 
-                repeat: Infinity,
-                ease: "linear" 
-              }}
-            >
-              <RefreshCw className="h-4 w-4" />
-            </motion.div>
-            
             {/* Animated text with falling letters effect */}
             <div className="flex overflow-hidden">
               {name.split('').map((letter, i) => (
