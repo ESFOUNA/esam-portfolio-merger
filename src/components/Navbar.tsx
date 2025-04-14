@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Flag } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { motion } from 'framer-motion';
 
@@ -55,10 +55,15 @@ export function Navbar() {
 
   return (
     <>
-      {/* Palestine Support Bar */}
-      <div className="w-full bg-[#006621] py-1.5 text-white flex items-center justify-center gap-2 font-medium">
-        <Flag size={16} className="text-white" />
-        <span className="text-sm">Free Palestine</span>
+      {/* Palestine Support Bar with flag colors */}
+      <div className="w-full flex items-center justify-center gap-2 font-medium">
+        <div className="w-full h-1.5 bg-black"></div>
+        <div className="w-full h-1.5 bg-white"></div>
+        <div className="w-full h-1.5 bg-green-700"></div>
+        <div className="w-full h-1.5 bg-red-600"></div>
+        <div className="absolute flex items-center text-white gap-2">
+          <span className="text-sm font-semibold">Free Palestine</span>
+        </div>
       </div>
       
       <header
