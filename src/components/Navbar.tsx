@@ -55,14 +55,25 @@ export function Navbar() {
 
   return (
     <>
-      {/* Palestine Support Bar with flag colors */}
-      <div className="w-full flex items-center justify-center gap-2 font-medium">
-        <div className="w-full h-1.5 bg-black"></div>
-        <div className="w-full h-1.5 bg-white"></div>
-        <div className="w-full h-1.5 bg-green-700"></div>
-        <div className="w-full h-1.5 bg-red-600"></div>
-        <div className="absolute flex items-center text-white gap-2">
-          <span className="text-sm font-semibold">Free Palestine</span>
+      {/* Palestine Flag Bar - black, white, green with red triangle on left */}
+      <div className="w-full h-7 relative flex flex-col">
+        {/* Top stripe - black */}
+        <div className="w-full h-1/3 bg-black"></div>
+        {/* Middle stripe - white */}
+        <div className="w-full h-1/3 bg-white"></div>
+        {/* Bottom stripe - green */}
+        <div className="w-full h-1/3 bg-green-700"></div>
+        {/* Red triangle on the left */}
+        <div 
+          className="absolute left-0 h-full w-1/3 overflow-hidden"
+          style={{
+            clipPath: 'polygon(0 0, 0% 100%, 100% 50%)',
+            backgroundColor: '#e4312b'
+          }}
+        ></div>
+        {/* Free Palestine text */}
+        <div className="absolute w-full h-full flex items-center justify-center">
+          <span className="text-sm font-semibold text-white drop-shadow-md">Free Palestine</span>
         </div>
       </div>
       
