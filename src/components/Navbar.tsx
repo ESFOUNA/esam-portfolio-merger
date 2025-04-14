@@ -31,7 +31,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animation variants for the falling letters
   const letterVariants = {
     hidden: { 
       y: -100,
@@ -49,30 +48,26 @@ export function Navbar() {
     })
   };
 
-  // The name to be animated
   const name = "ESAM";
 
   return (
     <>
-      {/* Palestine Flag Bar - minimized with text next to it */}
-      <div className="w-full h-5 flex items-center px-4 bg-white dark:bg-gray-900">
-        {/* Smaller Palestine flag */}
-        <div className="relative h-4 w-10 mr-2">
-          {/* Flag stripes */}
-          <div className="absolute w-full h-1/3 top-0 bg-black"></div>
-          <div className="absolute w-full h-1/3 top-1/3 bg-white"></div>
-          <div className="absolute w-full h-1/3 top-2/3 bg-green-700"></div>
-          {/* Red triangle */}
-          <div 
-            className="absolute left-0 h-full w-1/3"
-            style={{
-              clipPath: 'polygon(0 0, 0% 100%, 100% 50%)',
-              backgroundColor: '#e4312b'
-            }}
-          ></div>
+      <div className="w-full h-6 flex items-center justify-center px-4 bg-white dark:bg-gray-900">
+        <div className="flex items-center">
+          <div className="relative h-5 w-12 mr-2">
+            <div className="absolute w-full h-1/3 top-0 bg-black"></div>
+            <div className="absolute w-full h-1/3 top-1/3 bg-white"></div>
+            <div className="absolute w-full h-1/3 top-2/3 bg-green-700"></div>
+            <div 
+              className="absolute left-0 h-full w-1/3"
+              style={{
+                clipPath: 'polygon(0 0, 0% 100%, 100% 50%)',
+                backgroundColor: '#e4312b'
+              }}
+            ></div>
+          </div>
+          <span className="text-sm font-semibold text-gray-900 dark:text-white">Free Palestine</span>
         </div>
-        {/* Text next to the flag */}
-        <span className="text-xs font-semibold text-gray-900 dark:text-white">Free Palestine</span>
       </div>
       
       <header
@@ -82,7 +77,7 @@ export function Navbar() {
             ? 'py-2 glass' 
             : 'py-4 bg-transparent'
         )}
-        style={{ top: '20px' }} // Adjusted to account for the smaller Palestine bar
+        style={{ top: '24px' }}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <a href="#" className="flex items-center">
@@ -90,7 +85,6 @@ export function Navbar() {
               className="flex items-center"
               whileHover={{ scale: 1.05 }}
             >
-              {/* Animated text with falling letters effect */}
               <div className="flex overflow-hidden">
                 {name.split('').map((letter, i) => (
                   <motion.span 
@@ -101,7 +95,6 @@ export function Navbar() {
                     animate="visible"
                     style={{ fontFamily: 'Arial Black, sans-serif' }}
                     className="text-2xl font-bold"
-                    // After appearing, letters continue with a subtle bounce effect
                     whileHover={{
                       y: -5,
                       color: "hsl(var(--primary))",
@@ -115,7 +108,6 @@ export function Navbar() {
             </motion.div>
           </a>
 
-          {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <nav className="flex space-x-8">
               {navItems.map((item) => (
@@ -131,7 +123,6 @@ export function Navbar() {
             <ThemeToggle />
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
             <ThemeToggle />
             <Button
@@ -148,7 +139,6 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile navigation */}
           {mobileMenuOpen && (
             <div className="absolute top-full left-0 right-0 glass p-4 md:hidden animate-fade-in">
               <nav className="flex flex-col space-y-4">
