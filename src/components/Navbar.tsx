@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -55,26 +54,25 @@ export function Navbar() {
 
   return (
     <>
-      {/* Palestine Flag Bar - black, white, green with red triangle on left */}
-      <div className="w-full h-7 relative flex flex-col">
-        {/* Top stripe - black */}
-        <div className="w-full h-1/3 bg-black"></div>
-        {/* Middle stripe - white */}
-        <div className="w-full h-1/3 bg-white"></div>
-        {/* Bottom stripe - green */}
-        <div className="w-full h-1/3 bg-green-700"></div>
-        {/* Red triangle on the left */}
-        <div 
-          className="absolute left-0 h-full w-1/3 overflow-hidden"
-          style={{
-            clipPath: 'polygon(0 0, 0% 100%, 100% 50%)',
-            backgroundColor: '#e4312b'
-          }}
-        ></div>
-        {/* Free Palestine text */}
-        <div className="absolute w-full h-full flex items-center justify-center">
-          <span className="text-sm font-semibold text-white drop-shadow-md">Free Palestine</span>
+      {/* Palestine Flag Bar - minimized with text next to it */}
+      <div className="w-full h-5 flex items-center px-4 bg-white dark:bg-gray-900">
+        {/* Smaller Palestine flag */}
+        <div className="relative h-4 w-10 mr-2">
+          {/* Flag stripes */}
+          <div className="absolute w-full h-1/3 top-0 bg-black"></div>
+          <div className="absolute w-full h-1/3 top-1/3 bg-white"></div>
+          <div className="absolute w-full h-1/3 top-2/3 bg-green-700"></div>
+          {/* Red triangle */}
+          <div 
+            className="absolute left-0 h-full w-1/3"
+            style={{
+              clipPath: 'polygon(0 0, 0% 100%, 100% 50%)',
+              backgroundColor: '#e4312b'
+            }}
+          ></div>
         </div>
+        {/* Text next to the flag */}
+        <span className="text-xs font-semibold text-gray-900 dark:text-white">Free Palestine</span>
       </div>
       
       <header
@@ -84,7 +82,7 @@ export function Navbar() {
             ? 'py-2 glass' 
             : 'py-4 bg-transparent'
         )}
-        style={{ top: '28px' }} // Adjust the top position to account for the Palestine bar
+        style={{ top: '20px' }} // Adjusted to account for the smaller Palestine bar
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <a href="#" className="flex items-center">
