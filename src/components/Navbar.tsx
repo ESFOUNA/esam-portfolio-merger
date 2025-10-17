@@ -70,8 +70,8 @@ export function Navbar() {
           y: 0,
         }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl animate-fluid-float"
-        style={{ width: 'clamp(300px, 90vw, 1000px)' }}
+        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-4 sm:px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl animate-fluid-float"
+        style={{ width: 'clamp(320px, 90vw, 1000px)' }}
       >
         {/* Liquid Glass Background Effects */}
         <div className="absolute inset-0 overflow-hidden rounded-3xl">
@@ -138,23 +138,21 @@ export function Navbar() {
           <Link to="/" className="flex items-center group">
             <motion.div
               variants={logoContainerVariants}
-              initial="hidden"
+              initial="visible"
               animate="visible"
               whileHover="hover"
               className="relative"
             >
               <div className="relative flex items-center">
-                <motion.span 
-                  className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent cursor-pointer tracking-wide"
+                <span 
+                  className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white cursor-pointer tracking-wide"
                   style={{ 
-                    fontFamily: 'Arial Black, sans-serif',
-                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                    fontFamily: 'Arial Black, sans-serif, system-ui, -apple-system, sans-serif',
+                    textShadow: '0 2px 4px rgba(0,0,0,0.1)'
                   }}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
                 >
                   ESAM
-                </motion.span>
+                </span>
               </div>
             </motion.div>
           </Link>
@@ -195,7 +193,8 @@ export function Navbar() {
             <ThemeToggle />
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-3">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
@@ -255,16 +254,6 @@ export function Navbar() {
                 </Link>
               </motion.div>
             ))}
-            <motion.div
-              initial={{ opacity: 0, x: -15 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: navItems.length * 0.05, duration: 0.2 }}
-              className="pt-2 mt-2 border-t border-gray-200/50 dark:border-gray-700/50"
-            >
-              <div className="flex justify-center py-1">
-                <ThemeToggle />
-              </div>
-            </motion.div>
           </nav>
         </motion.div>
       )}

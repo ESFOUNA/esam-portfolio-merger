@@ -787,7 +787,7 @@ html, body, #root {
 @media (max-width: 1024px) {
   .liquid-glass-navbar {
     width: 95vw !important;
-    min-width: 700px !important;
+    min-width: 600px !important;
   }
 }
 
@@ -795,7 +795,25 @@ html, body, #root {
   .liquid-glass-navbar {
     padding: 0.75rem 1rem !important;
     width: 95vw !important;
-    min-width: 300px !important;
+    min-width: 320px !important;
+    /* Ensure consistent colors on mobile */
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.25) 0%, 
+      rgba(255, 255, 255, 0.35) 25%,
+      rgba(255, 255, 255, 0.15) 50%, 
+      rgba(255, 255, 255, 0.3) 75%,
+      rgba(255, 255, 255, 0.2) 100%
+    ) !important;
+  }
+  
+  .dark .liquid-glass-navbar {
+    background: linear-gradient(135deg, 
+      rgba(17, 24, 39, 0.4) 0%, 
+      rgba(30, 41, 59, 0.5) 25%,
+      rgba(17, 24, 39, 0.3) 50%, 
+      rgba(30, 41, 59, 0.45) 75%,
+      rgba(17, 24, 39, 0.35) 100%
+    ) !important;
   }
 }
 
@@ -804,7 +822,7 @@ html, body, #root {
     top: 1rem !important;
     padding: 0.5rem 0.75rem !important;
     width: 90vw !important;
-    min-width: 280px !important;
+    min-width: 300px !important;
   }
 }
 
