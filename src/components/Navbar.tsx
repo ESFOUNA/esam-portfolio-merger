@@ -70,68 +70,10 @@ export function Navbar() {
           y: 0,
         }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-4 sm:px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl animate-fluid-float"
-        style={{ width: 'clamp(320px, 90vw, 1000px)' }}
+        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-4 sm:px-6 mobile-safe-navbar shadow-lg transition-all duration-300 ease-in-out rounded-2xl"
+        style={{ width: 'clamp(300px, 85vw, 900px)' }}
       >
-        {/* Liquid Glass Background Effects */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
-          {/* Flowing liquid glass bubbles */}
-          <motion.div
-            className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-400/30 to-purple-500/30 rounded-full blur-md"
-            animate={{
-              x: [0, 20, 0],
-              y: [0, -10, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute -top-2 right-8 w-24 h-24 bg-gradient-to-br from-cyan-300/25 to-blue-400/25 rounded-full blur-lg"
-            animate={{
-              x: [0, -15, 0],
-              y: [0, 12, 0],
-              scale: [1, 0.9, 1],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}
-          />
-          <motion.div
-            className="absolute top-2 left-1/3 w-12 h-12 bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 rounded-full blur-sm"
-            animate={{
-              x: [0, 10, 0],
-              y: [0, 8, 0],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
-          />
-          
-          {/* Glass shimmer wave */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-3xl"
-            animate={{
-              x: ['-100%', '100%'],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              repeatDelay: 2
-            }}
-          />
-        </div>
+
 
         <div className="flex items-center justify-between relative z-10 w-full">
           {/* Left: Logo */}
@@ -144,21 +86,9 @@ export function Navbar() {
               className="relative"
             >
               <div className="relative flex items-center">
-                <h1 
-                  className="text-xl sm:text-2xl md:text-3xl font-bold cursor-pointer select-none text-gray-900 dark:text-white"
-                  style={{ 
-                    fontFamily: 'Arial, Helvetica, sans-serif',
-                    fontWeight: 'bold',
-                    letterSpacing: '0.05em',
-                    lineHeight: '1.2',
-                    textShadow: 'none',
-                    display: 'block',
-                    visibility: 'visible',
-                    opacity: '1'
-                  }}
-                >
+                <div className="mobile-logo">
                   ESAM
-                </h1>
+                </div>
               </div>
             </motion.div>
           </Link>
