@@ -145,9 +145,8 @@ export function Navbar() {
             >
               <div className="relative flex items-center">
                 <span 
-                  className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white cursor-pointer tracking-wide"
+                  className="navbar-logo text-xl sm:text-2xl md:text-3xl font-black text-gray-900 dark:text-white cursor-pointer tracking-wide select-none"
                   style={{ 
-                    fontFamily: 'Arial Black, sans-serif, system-ui, -apple-system, sans-serif',
                     textShadow: '0 2px 4px rgba(0,0,0,0.1)'
                   }}
                 >

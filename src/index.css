@@ -783,7 +783,34 @@ html, body, #root {
   animation: liquid-breathe 8s ease-in-out infinite;
 }
 
-/* Responsive liquid glass navbar */
+/* Force consistent navbar styling across all devices */
+.liquid-glass-navbar {
+  /* Override any responsive changes - keep desktop styling */
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.35) 25%,
+    rgba(255, 255, 255, 0.15) 50%, 
+    rgba(255, 255, 255, 0.3) 75%,
+    rgba(255, 255, 255, 0.2) 100%
+  ) !important;
+  backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 24px !important;
+}
+
+.dark .liquid-glass-navbar {
+  background: linear-gradient(135deg, 
+    rgba(17, 24, 39, 0.4) 0%, 
+    rgba(30, 41, 59, 0.5) 25%,
+    rgba(17, 24, 39, 0.3) 50%, 
+    rgba(30, 41, 59, 0.45) 75%,
+    rgba(17, 24, 39, 0.35) 100%
+  ) !important;
+  border: 1px solid rgba(75, 85, 99, 0.3) !important;
+}
+
+/* Responsive sizing only (not colors/effects) */
 @media (max-width: 1024px) {
   .liquid-glass-navbar {
     width: 95vw !important;
@@ -796,24 +823,6 @@ html, body, #root {
     padding: 0.75rem 1rem !important;
     width: 95vw !important;
     min-width: 320px !important;
-    /* Ensure consistent colors on mobile */
-    background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.25) 0%, 
-      rgba(255, 255, 255, 0.35) 25%,
-      rgba(255, 255, 255, 0.15) 50%, 
-      rgba(255, 255, 255, 0.3) 75%,
-      rgba(255, 255, 255, 0.2) 100%
-    ) !important;
-  }
-  
-  .dark .liquid-glass-navbar {
-    background: linear-gradient(135deg, 
-      rgba(17, 24, 39, 0.4) 0%, 
-      rgba(30, 41, 59, 0.5) 25%,
-      rgba(17, 24, 39, 0.3) 50%, 
-      rgba(30, 41, 59, 0.45) 75%,
-      rgba(17, 24, 39, 0.35) 100%
-    ) !important;
   }
 }
 
@@ -905,4 +914,24 @@ html, body, #root {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+}/* Fix 
+font loading issues */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Ensure fonts load properly */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force font fallbacks for logo */
+.navbar-logo {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 900 !important;
+  font-display: swap;
+}
+
+/* Prevent invisible text during font load */
+.font-display-swap {
+  font-display: swap;
 }
