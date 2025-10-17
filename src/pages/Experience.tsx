@@ -1,12 +1,11 @@
-
 import React, { useEffect } from 'react';
-import HeroSection from '@/components/HeroSection';
+import ExperienceSection from '@/components/ExperienceSection';
 import PageTransition from '@/components/PageTransition';
 import FixedViewportLayout from '@/components/FixedViewportLayout';
 
-const Index = () => {
+const Experience = () => {
   useEffect(() => {
-    document.title = 'ESAM | Software Engineer';
+    document.title = 'Experience | ESAM';
     
     // Trigger animations immediately since we're not scrolling
     const elements = document.querySelectorAll('.animate-on-scroll');
@@ -18,10 +17,10 @@ const Index = () => {
   return (
     <PageTransition>
       <FixedViewportLayout>
-        <HeroSection />
+        <ExperienceSection />
       </FixedViewportLayout>
     </PageTransition>
   );
 };
 
-export default Index;
+export default Experience;

@@ -7,21 +7,21 @@ import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-950">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold font-serif text-center mb-12 animate-on-scroll">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-8 sm:py-12 md:py-20 bg-transparent">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-center mb-8 sm:mb-12 animate-on-scroll">
           Contact Me
         </h2>
         
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           <div className="animate-on-scroll">
-            <div className="glass rounded-xl p-8 shadow-lg h-full">
-              <h3 className="text-xl font-bold mb-6">Get In Touch</h3>
+            <div className="glass rounded-xl p-4 sm:p-6 shadow-lg h-full">
+              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Get In Touch</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-primary" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">Email</p>
@@ -34,9 +34,9 @@ export function ContactSection() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">Phone</p>
@@ -49,9 +49,9 @@ export function ContactSection() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Linkedin className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Linkedin className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">LinkedIn</p>
@@ -66,9 +66,9 @@ export function ContactSection() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Github className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Github className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium">GitHub</p>
@@ -87,8 +87,8 @@ export function ContactSection() {
           </div>
           
           <div className="animate-on-scroll">
-            <div className="glass rounded-xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
+            <div className="glass rounded-xl p-4 sm:p-6 shadow-lg">
+              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Send Me a Message</h3>
               
               <form className="space-y-4">
                 <div className="space-y-2">

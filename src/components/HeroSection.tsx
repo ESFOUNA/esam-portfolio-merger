@@ -60,7 +60,7 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden"
       ref={sectionRef}
     >
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-blue-50 to-slate-50 dark:from-blue-950 dark:to-slate-950"></div>
+      <div className="absolute inset-0 z-0 bg-gray-50 dark:bg-gray-900"></div>
       
       {/* Moving shapes for background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
