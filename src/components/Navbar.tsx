@@ -1,7 +1,4 @@
-import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
@@ -20,7 +17,6 @@ const navItems: NavItem[] = [
 ];
 
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   const logoContainerVariants = {
@@ -63,15 +59,15 @@ export function Navbar() {
       </div>
       
       <div className="relative">
-        <motion.header
+      <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ 
           opacity: 1, 
           y: 0,
         }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl animate-fluid-float"
-        style={{ width: 'clamp(700px, 90vw, 1000px)' }}
+        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-4 md:px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl animate-fluid-float"
+        style={{ width: 'clamp(300px, 90vw, 1000px)' }}
       >
 
 
@@ -162,7 +158,7 @@ export function Navbar() {
           </Link>
 
           {/* Center: Navigation */}
-          <nav className="hidden md:flex items-center space-x-4 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+          <nav className="flex items-center space-x-1 md:space-x-4 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.label}
@@ -173,7 +169,7 @@ export function Navbar() {
                 <Link
                   to={item.href}
                   className={cn(
-                    "text-gray-700 dark:text-gray-200 hover:text-primary text-sm font-medium transition-all duration-300 relative px-2 py-2 rounded-lg group whitespace-nowrap",
+                    "text-gray-700 dark:text-gray-200 hover:text-primary text-xs md:text-sm font-medium transition-all duration-300 relative px-1 md:px-2 py-2 rounded-lg group whitespace-nowrap",
                     "hover:bg-white/20 dark:hover:bg-gray-800/30 backdrop-blur-sm glass-button",
                     location.pathname === item.href 
                       ? "text-primary bg-primary/10 backdrop-blur-sm after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full" 
@@ -193,74 +189,12 @@ export function Navbar() {
           </nav>
 
           {/* Right: Theme Toggle */}
-          <div className="hidden md:block">
+          <div className="flex items-center">
             <ThemeToggle />
-          </div>
-
-          <div className="md:hidden flex items-center space-x-3">
-            <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-              className="text-gray-700 dark:text-gray-200 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-colors glass-button"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
           </div>
 
         </div>
       </motion.header>
-
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[55] md:hidden"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
-
-      {/* Professional Mobile Menu Dropdown */}
-      {mobileMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -15, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -15, scale: 0.9 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-          className="fixed top-16 left-1/2 transform -translate-x-1/2 professional-mobile-menu md:hidden z-[60]"
-          style={{ width: 'clamp(250px, 80vw, 320px)' }}
-        >
-          <nav className="flex flex-col space-y-1">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, x: -15 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.05, duration: 0.2 }}
-              >
-                <Link
-                  to={item.href}
-                  className={cn(
-                    "text-gray-700 dark:text-gray-200 hover:text-primary text-sm font-medium transition-all duration-200 block py-2.5 px-4 rounded-lg hover:bg-primary/10",
-                    location.pathname === item.href ? "text-primary bg-primary/15 font-semibold" : ""
-                  )}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              </motion.div>
-            ))}
-          </nav>
-        </motion.div>
-      )}
       </div>
     </>
   );
