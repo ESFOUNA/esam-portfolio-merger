@@ -783,9 +783,8 @@ html, body, #root {
   animation: liquid-breathe 8s ease-in-out infinite;
 }
 
-/* Force consistent navbar styling across all devices */
+/* FORCE IDENTICAL STYLING ON ALL DEVICES */
 .liquid-glass-navbar {
-  /* Override any responsive changes - keep desktop styling */
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.25) 0%, 
     rgba(255, 255, 255, 0.35) 25%,
@@ -797,6 +796,10 @@ html, body, #root {
   -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 24px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08) !important,
+    0 4px 16px rgba(0, 0, 0, 0.03) !important,
+    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 .dark .liquid-glass-navbar {
@@ -808,6 +811,35 @@ html, body, #root {
     rgba(17, 24, 39, 0.35) 100%
   ) !important;
   border: 1px solid rgba(75, 85, 99, 0.3) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2) !important,
+    0 4px 16px rgba(0, 0, 0, 0.1) !important,
+    inset 0 1px 0 rgba(75, 85, 99, 0.2) !important;
+}
+
+/* MOBILE DEVICE SPECIFIC OVERRIDES */
+@media screen and (max-device-width: 768px) {
+  .liquid-glass-navbar {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.25) 0%, 
+      rgba(255, 255, 255, 0.35) 25%,
+      rgba(255, 255, 255, 0.15) 50%, 
+      rgba(255, 255, 255, 0.3) 75%,
+      rgba(255, 255, 255, 0.2) 100%
+    ) !important;
+    backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
+    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
+  }
+  
+  .dark .liquid-glass-navbar {
+    background: linear-gradient(135deg, 
+      rgba(17, 24, 39, 0.4) 0%, 
+      rgba(30, 41, 59, 0.5) 25%,
+      rgba(17, 24, 39, 0.3) 50%, 
+      rgba(30, 41, 59, 0.45) 75%,
+      rgba(17, 24, 39, 0.35) 100%
+    ) !important;
+  }
 }
 
 /* Responsive sizing only (not colors/effects) */
@@ -934,4 +966,36 @@ font loading issues */
 /* Prevent invisible text during font load */
 .font-display-swap {
   font-display: swap;
+}/* BU
+LLETPROOF MOBILE FONT FIXES */
+@media screen and (max-device-width: 768px) {
+  * {
+    font-display: swap !important;
+    -webkit-text-size-adjust: 100% !important;
+    -ms-text-size-adjust: 100% !important;
+    text-rendering: optimizeLegibility !important;
+  }
+  
+  /* Force system fonts on mobile devices */
+  .navbar-logo {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+    font-weight: 900 !important;
+    font-display: swap !important;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .navbar-logo {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+}
+
+/* Android Chrome specific fixes */
+@supports (-webkit-appearance: none) and (not (-webkit-touch-callout: none)) {
+  .navbar-logo {
+    font-family: "Roboto", system-ui, Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
 }
