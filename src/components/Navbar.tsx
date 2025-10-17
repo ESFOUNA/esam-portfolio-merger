@@ -144,18 +144,21 @@ export function Navbar() {
               className="relative"
             >
               <div className="relative flex items-center">
-                <div 
-                  className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 dark:text-white cursor-pointer tracking-wide select-none"
+                <h1 
+                  className="text-xl sm:text-2xl md:text-3xl font-bold cursor-pointer select-none text-gray-900 dark:text-white"
                   style={{ 
-                    fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif',
-                    fontWeight: '900',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                    fontFamily: 'Arial, Helvetica, sans-serif',
+                    fontWeight: 'bold',
                     letterSpacing: '0.05em',
-                    lineHeight: '1'
+                    lineHeight: '1.2',
+                    textShadow: 'none',
+                    display: 'block',
+                    visibility: 'visible',
+                    opacity: '1'
                   }}
                 >
                   ESAM
-                </div>
+                </h1>
               </div>
             </motion.div>
           </Link>

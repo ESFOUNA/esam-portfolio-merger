@@ -783,62 +783,34 @@ html, body, #root {
   animation: liquid-breathe 8s ease-in-out infinite;
 }
 
-/* FORCE IDENTICAL STYLING ON ALL DEVICES */
+/* MOBILE-FIRST VISIBLE NAVBAR */
 .liquid-glass-navbar {
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.25) 0%, 
-    rgba(255, 255, 255, 0.35) 25%,
-    rgba(255, 255, 255, 0.15) 50%, 
-    rgba(255, 255, 255, 0.3) 75%,
-    rgba(255, 255, 255, 0.2) 100%
-  ) !important;
-  backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(0, 0, 0, 0.1) !important;
   border-radius: 24px !important;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.08) !important,
-    0 4px 16px rgba(0, 0, 0, 0.03) !important,
-    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
 .dark .liquid-glass-navbar {
-  background: linear-gradient(135deg, 
-    rgba(17, 24, 39, 0.4) 0%, 
-    rgba(30, 41, 59, 0.5) 25%,
-    rgba(17, 24, 39, 0.3) 50%, 
-    rgba(30, 41, 59, 0.45) 75%,
-    rgba(17, 24, 39, 0.35) 100%
-  ) !important;
-  border: 1px solid rgba(75, 85, 99, 0.3) !important;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.2) !important,
-    0 4px 16px rgba(0, 0, 0, 0.1) !important,
-    inset 0 1px 0 rgba(75, 85, 99, 0.2) !important;
+  background: rgba(31, 41, 55, 0.95) !important;
+  border: 2px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* MOBILE DEVICE SPECIFIC OVERRIDES */
+/* MOBILE DEVICE VISIBILITY FIXES */
 @media screen and (max-device-width: 768px) {
   .liquid-glass-navbar {
-    background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.25) 0%, 
-      rgba(255, 255, 255, 0.35) 25%,
-      rgba(255, 255, 255, 0.15) 50%, 
-      rgba(255, 255, 255, 0.3) 75%,
-      rgba(255, 255, 255, 0.2) 100%
-    ) !important;
-    backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
-    -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(105%) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: 2px solid rgba(0, 0, 0, 0.2) !important;
   }
   
   .dark .liquid-glass-navbar {
-    background: linear-gradient(135deg, 
-      rgba(17, 24, 39, 0.4) 0%, 
-      rgba(30, 41, 59, 0.5) 25%,
-      rgba(17, 24, 39, 0.3) 50%, 
-      rgba(30, 41, 59, 0.45) 75%,
-      rgba(17, 24, 39, 0.35) 100%
-    ) !important;
+    background: rgba(31, 41, 55, 0.98) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
   }
 }
 
