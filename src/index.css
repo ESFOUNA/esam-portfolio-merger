@@ -783,33 +783,54 @@ html, body, #root {
   animation: liquid-breathe 8s ease-in-out infinite;
 }
 
-/* BULLETPROOF MOBILE NAVBAR */
-.mobile-safe-navbar {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* Beautiful Liquid Glass Navbar Theme */
+.liquid-glass-navbar {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.35) 25%,
+    rgba(255, 255, 255, 0.15) 50%, 
+    rgba(255, 255, 255, 0.3) 75%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  backdrop-filter: blur(40px) saturate(180%) brightness(105%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(105%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.dark .mobile-safe-navbar {
-  background: #1f2937;
-  border: 1px solid #374151;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.dark .liquid-glass-navbar {
+  background: linear-gradient(135deg, 
+    rgba(17, 24, 39, 0.4) 0%, 
+    rgba(30, 41, 59, 0.5) 25%,
+    rgba(17, 24, 39, 0.3) 50%, 
+    rgba(30, 41, 59, 0.45) 75%,
+    rgba(17, 24, 39, 0.35) 100%
+  );
+  border: 1px solid rgba(75, 85, 99, 0.3);
 }
 
-/* BULLETPROOF LOGO */
-.mobile-logo {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  color: #1f2937;
-  letter-spacing: 0.05em;
-  line-height: 1;
-  display: block;
-  text-decoration: none;
+.liquid-glass-navbar:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.3) 0%, 
+    rgba(255, 255, 255, 0.4) 25%,
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.35) 75%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  backdrop-filter: blur(50px) saturate(200%) brightness(108%);
+  -webkit-backdrop-filter: blur(50px) saturate(200%) brightness(108%);
+  transform: translateY(-1px) translateX(-50%);
 }
 
-.dark .mobile-logo {
-  color: #ffffff;
+.dark .liquid-glass-navbar:hover {
+  background: linear-gradient(135deg, 
+    rgba(17, 24, 39, 0.5) 0%, 
+    rgba(30, 41, 59, 0.6) 25%,
+    rgba(17, 24, 39, 0.4) 50%, 
+    rgba(30, 41, 59, 0.55) 75%,
+    rgba(17, 24, 39, 0.45) 100%
+  );
 }
 
 /* MOBILE DEVICE VISIBILITY FIXES */
