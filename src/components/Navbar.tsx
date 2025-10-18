@@ -78,20 +78,9 @@ export function Navbar() {
       >
 
 
-        {/* Animated Gradient Circles */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl navbar-circles">
-          <div className="circle circle-1"></div>
-          <div className="circle circle-2"></div>
-          <div className="circle circle-3"></div>
-          <div className="circle circle-4"></div>
-          <div className="circle circle-5"></div>
-          <div className="circle circle-6"></div>
-          <div className="circle circle-7"></div>
-          <div className="circle circle-8"></div>
-          <div className="circle circle-9"></div>
-          <div className="circle circle-10"></div>
-          <div className="circle circle-11"></div>
-          <div className="circle circle-12"></div>
+        {/* Subtle Shine Effect */}
+        <div className="absolute inset-0 overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
         </div>
 
         <div className="flex items-center justify-between relative z-10 w-full">

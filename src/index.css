@@ -672,29 +672,43 @@ body,
   }
 }
 
-/* Liquid Glass Navbar Theme */
+/* Professional Animated Gradient Navbar */
 .liquid-glass-navbar {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.25) 0%,
-      rgba(255, 255, 255, 0.35) 25%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(255, 255, 255, 0.3) 75%,
-      rgba(255, 255, 255, 0.2) 100%);
-  backdrop-filter: blur(40px) saturate(200%) brightness(110%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(110%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(-45deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4),
+              0 4px 16px rgba(118, 75, 162, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 }
 
 .dark .liquid-glass-navbar {
-  background: linear-gradient(135deg,
-      rgba(17, 24, 39, 0.4) 0%,
-      rgba(30, 41, 59, 0.5) 25%,
-      rgba(17, 24, 39, 0.3) 50%,
-      rgba(30, 41, 59, 0.45) 75%,
-      rgba(17, 24, 39, 0.35) 100%);
-  border: 1px solid rgba(75, 85, 99, 0.3);
+  background: linear-gradient(-45deg, #1e3a8a 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #dbeafe 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.5),
+              0 4px 16px rgba(30, 58, 138, 0.4);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Shine effect */
+.animate-shine {
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .liquid-glass-navbar:hover {
