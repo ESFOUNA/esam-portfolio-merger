@@ -239,11 +239,12 @@ export function Navbar() {
       {/* Mobile Dropdown Menu */}
       {mobileMenuOpen && (
         <div 
-          className="fixed top-20 left-1/2 transform -translate-x-1/2 z-[60] md:hidden mobile-dropdown-menu"
+          className="fixed top-24 right-4 z-[60] md:hidden mobile-dropdown-menu"
           style={{ 
-            width: 'clamp(250px, 80vw, 320px)',
-            borderRadius: '16px',
-            padding: '12px'
+            width: 'auto',
+            minWidth: '140px',
+            borderRadius: '12px',
+            padding: '8px'
           }}
         >
           <nav className="flex flex-col space-y-1">
@@ -252,7 +253,7 @@ export function Navbar() {
                 key={item.label}
                 to={item.href}
                 className={cn(
-                  "text-gray-700 dark:text-gray-200 hover:text-primary text-sm font-medium transition-all duration-200 block py-2.5 px-4 rounded-lg",
+                  "text-gray-700 dark:text-gray-200 hover:text-primary text-sm font-medium transition-all duration-200 block py-2 px-3 rounded-lg whitespace-nowrap",
                   location.pathname === item.href ? "text-primary font-semibold" : ""
                 )}
                 onClick={() => setMobileMenuOpen(false)}
