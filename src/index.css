@@ -882,9 +882,9 @@ body,
 /* ANIMATED GRADIENT NAVBAR - MOBILE & DESKTOP */
 .liquid-glass-navbar {
   background: radial-gradient(circle, #ffd215, #fff172 80%) !important;
-  box-shadow: 0 0 20px rgba(255, 223, 87, 0.6), 
-              inset 0 3px 12px rgba(255, 223, 52, 0.9),
-              inset 0 -3px 4px rgba(255, 250, 215, 0.8) !important;
+  box-shadow: 0 0 20px rgba(255, 223, 87, 0.6),
+    inset 0 3px 12px rgba(255, 223, 52, 0.9),
+    inset 0 -3px 4px rgba(255, 250, 215, 0.8) !important;
   border: none !important;
   overflow: hidden !important;
   position: relative !important;
@@ -893,23 +893,23 @@ body,
 .dark .liquid-glass-navbar {
   background: radial-gradient(circle, #3b82f6, #60a5fa 80%) !important;
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.6),
-              inset 0 3px 12px rgba(59, 130, 246, 0.9),
-              inset 0 -3px 4px rgba(96, 165, 250, 0.8) !important;
+    inset 0 3px 12px rgba(59, 130, 246, 0.9),
+    inset 0 -3px 4px rgba(96, 165, 250, 0.8) !important;
 }
 
 @media (max-width: 768px) {
   .liquid-glass-navbar {
     background: radial-gradient(circle, #ffd215, #fff172 80%) !important;
-    box-shadow: 0 0 20px rgba(255, 223, 87, 0.6), 
-                inset 0 3px 12px rgba(255, 223, 52, 0.9),
-                inset 0 -3px 4px rgba(255, 250, 215, 0.8) !important;
+    box-shadow: 0 0 20px rgba(255, 223, 87, 0.6),
+      inset 0 3px 12px rgba(255, 223, 52, 0.9),
+      inset 0 -3px 4px rgba(255, 250, 215, 0.8) !important;
   }
 
   .dark .liquid-glass-navbar {
     background: radial-gradient(circle, #3b82f6, #60a5fa 80%) !important;
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.6),
-                inset 0 3px 12px rgba(59, 130, 246, 0.9),
-                inset 0 -3px 4px rgba(96, 165, 250, 0.8) !important;
+      inset 0 3px 12px rgba(59, 130, 246, 0.9),
+      inset 0 -3px 4px rgba(96, 165, 250, 0.8) !important;
   }
 
   /* Force logo visibility */
@@ -1107,110 +1107,410 @@ MATED CIRCLES FOR NAVBAR */
 .navbar-circles .circle.circle-1 {
   animation-name: circle-1;
 }
+
 .navbar-circles .circle.circle-2 {
   animation-name: circle-2;
 }
+
 .navbar-circles .circle.circle-3 {
   animation-name: circle-3;
 }
+
 .navbar-circles .circle.circle-4 {
   animation-name: circle-4;
 }
+
 .navbar-circles .circle.circle-5 {
   animation-name: circle-5;
 }
+
 .navbar-circles .circle.circle-6 {
   animation-name: circle-6;
 }
+
 .navbar-circles .circle.circle-7 {
   animation-name: circle-7;
 }
+
 .navbar-circles .circle.circle-8 {
   animation-name: circle-8;
 }
+
 .navbar-circles .circle.circle-9 {
   animation-name: circle-9;
 }
+
 .navbar-circles .circle.circle-10 {
   animation-name: circle-10;
 }
+
 .navbar-circles .circle.circle-11 {
   animation-name: circle-11;
 }
+
 .navbar-circles .circle.circle-12 {
   animation-name: circle-12;
 }
 
 @keyframes circle-1 {
-  0%, 100% { transform: translate(0px, -40px); }
-  33% { transform: translate(0px, 16px); }
-  66% { transform: translate(12px, 64px); }
+
+  0%,
+  100% {
+    transform: translate(0px, -40px);
+  }
+
+  33% {
+    transform: translate(0px, 16px);
+  }
+
+  66% {
+    transform: translate(12px, 64px);
+  }
 }
 
 @keyframes circle-2 {
-  0%, 100% { transform: translate(92px, 8px); }
-  33% { transform: translate(80px, -10px); }
-  66% { transform: translate(72px, -48px); }
+
+  0%,
+  100% {
+    transform: translate(92px, 8px);
+  }
+
+  33% {
+    transform: translate(80px, -10px);
+  }
+
+  66% {
+    transform: translate(72px, -48px);
+  }
 }
 
 @keyframes circle-3 {
-  0%, 100% { transform: translate(-12px, -12px); }
-  33% { transform: translate(20px, 12px); }
-  66% { transform: translate(12px, 4px); }
+
+  0%,
+  100% {
+    transform: translate(-12px, -12px);
+  }
+
+  33% {
+    transform: translate(20px, 12px);
+  }
+
+  66% {
+    transform: translate(12px, 4px);
+  }
 }
 
 @keyframes circle-4 {
-  0%, 100% { transform: translate(80px, -12px); }
-  33% { transform: translate(76px, -12px); }
-  66% { transform: translate(112px, -8px); }
+
+  0%,
+  100% {
+    transform: translate(80px, -12px);
+  }
+
+  33% {
+    transform: translate(76px, -12px);
+  }
+
+  66% {
+    transform: translate(112px, -8px);
+  }
 }
 
 @keyframes circle-5 {
-  0%, 100% { transform: translate(12px, -4px); }
-  33% { transform: translate(84px, 28px); }
-  66% { transform: translate(40px, -32px); }
+
+  0%,
+  100% {
+    transform: translate(12px, -4px);
+  }
+
+  33% {
+    transform: translate(84px, 28px);
+  }
+
+  66% {
+    transform: translate(40px, -32px);
+  }
 }
 
 @keyframes circle-6 {
-  0%, 100% { transform: translate(56px, 16px); }
-  33% { transform: translate(28px, -16px); }
-  66% { transform: translate(76px, -56px); }
+
+  0%,
+  100% {
+    transform: translate(56px, 16px);
+  }
+
+  33% {
+    transform: translate(28px, -16px);
+  }
+
+  66% {
+    transform: translate(76px, -56px);
+  }
 }
 
 @keyframes circle-7 {
-  0%, 100% { transform: translate(8px, 28px); }
-  33% { transform: translate(8px, 28px); }
-  66% { transform: translate(20px, -60px); }
+
+  0%,
+  100% {
+    transform: translate(8px, 28px);
+  }
+
+  33% {
+    transform: translate(8px, 28px);
+  }
+
+  66% {
+    transform: translate(20px, -60px);
+  }
 }
 
 @keyframes circle-8 {
-  0%, 100% { transform: translate(28px, -4px); }
-  33% { transform: translate(32px, -4px); }
-  66% { transform: translate(56px, -20px); }
+
+  0%,
+  100% {
+    transform: translate(28px, -4px);
+  }
+
+  33% {
+    transform: translate(32px, -4px);
+  }
+
+  66% {
+    transform: translate(56px, -20px);
+  }
 }
 
 @keyframes circle-9 {
-  0%, 100% { transform: translate(20px, -12px); }
-  33% { transform: translate(20px, -12px); }
-  66% { transform: translate(80px, -8px); }
+
+  0%,
+  100% {
+    transform: translate(20px, -12px);
+  }
+
+  33% {
+    transform: translate(20px, -12px);
+  }
+
+  66% {
+    transform: translate(80px, -8px);
+  }
 }
 
 @keyframes circle-10 {
-  0%, 100% { transform: translate(64px, 16px); }
-  33% { transform: translate(68px, 20px); }
-  66% { transform: translate(100px, 28px); }
+
+  0%,
+  100% {
+    transform: translate(64px, 16px);
+  }
+
+  33% {
+    transform: translate(68px, 20px);
+  }
+
+  66% {
+    transform: translate(100px, 28px);
+  }
 }
 
 @keyframes circle-11 {
-  0%, 100% { transform: translate(4px, 4px); }
-  33% { transform: translate(4px, 4px); }
-  66% { transform: translate(68px, 20px); }
+
+  0%,
+  100% {
+    transform: translate(4px, 4px);
+  }
+
+  33% {
+    transform: translate(4px, 4px);
+  }
+
+  66% {
+    transform: translate(68px, 20px);
+  }
 }
 
 @keyframes circle-12 {
-  0%, 100% { transform: translate(52px, 4px); }
-  33% { transform: translate(56px, 0px); }
-  66% { transform: translate(60px, -32px); }
+
+  0%,
+  100% {
+    transform: translate(52px, 4px);
+  }
+
+  33% {
+    transform: translate(56px, 0px);
+  }
+
+  66% {
+    transform: translate(60px, -32px);
+  }
+}
+
+/* Dark mode circles - blue tones */
+.dark .navbar-circles .circle.circle-1,
+.dark .navbar-circles .circle.circle-9,
+.dark .navbar-circles .circle.circle-10 {
+  background: rgba(96, 165, 250, 0.7);
+}
+
+.dark .navbar-circles .circle.circle-3,
+.dark .navbar-circles .circle.circle-4 {
+  background: #60a5fa;
+}
+
+.dark .navbar-circles .circle.circle-5,
+.dark .navbar-circles .circle.circle-6 {
+  background: #818cf8;
+}
+
+.dark .navbar-circles .circle.circle-2,
+.dark .navbar-circles .circle.circle-7,
+.dark .navbar-circles .circle.circle-8,
+.dark .navbar-circles .circle.circle-11,
+.dark .navbar-circles .circle.circle-12 {
+  background: rgba(147, 197, 253, 0.7);
+}
+
+/*
+ ANIMATED CIRCLES FOR NAVBAR - CONTINUOUS MOTION */
+.navbar-circles {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+}
+
+.navbar-circles .circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  filter: blur(8px);
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.navbar-circles .circle.circle-1,
+.navbar-circles .circle.circle-9,
+.navbar-circles .circle.circle-10 {
+  background: rgba(255, 232, 26, 0.7);
+}
+
+.navbar-circles .circle.circle-3,
+.navbar-circles .circle.circle-4 {
+  background: #1a23ff;
+  filter: blur(14px);
+}
+
+.navbar-circles .circle.circle-5,
+.navbar-circles .circle.circle-6 {
+  background: #e21bda;
+  filter: blur(16px);
+}
+
+.navbar-circles .circle.circle-2,
+.navbar-circles .circle.circle-7,
+.navbar-circles .circle.circle-8,
+.navbar-circles .circle.circle-11,
+.navbar-circles .circle.circle-12 {
+  background: rgba(255, 163, 26, 0.7);
+  filter: blur(12px);
+}
+
+.navbar-circles .circle.circle-1 { animation-name: circle-1; }
+.navbar-circles .circle.circle-2 { animation-name: circle-2; }
+.navbar-circles .circle.circle-3 { animation-name: circle-3; }
+.navbar-circles .circle.circle-4 { animation-name: circle-4; }
+.navbar-circles .circle.circle-5 { animation-name: circle-5; }
+.navbar-circles .circle.circle-6 { animation-name: circle-6; }
+.navbar-circles .circle.circle-7 { animation-name: circle-7; }
+.navbar-circles .circle.circle-8 { animation-name: circle-8; }
+.navbar-circles .circle.circle-9 { animation-name: circle-9; }
+.navbar-circles .circle.circle-10 { animation-name: circle-10; }
+.navbar-circles .circle.circle-11 { animation-name: circle-11; }
+.navbar-circles .circle.circle-12 { animation-name: circle-12; }
+
+@keyframes circle-1 {
+  0% { transform: translate(0px, -40px) translateZ(0); }
+  33% { transform: translate(0px, 16px) translateZ(0); }
+  66% { transform: translate(12px, 64px) translateZ(0); }
+  100% { transform: translate(0px, -40px) translateZ(0); }
+}
+
+@keyframes circle-2 {
+  0% { transform: translate(92px, 8px) translateZ(0); }
+  33% { transform: translate(80px, -10px) translateZ(0); }
+  66% { transform: translate(72px, -48px) translateZ(0); }
+  100% { transform: translate(92px, 8px) translateZ(0); }
+}
+
+@keyframes circle-3 {
+  0% { transform: translate(-12px, -12px) translateZ(0); }
+  33% { transform: translate(20px, 12px) translateZ(0); }
+  66% { transform: translate(12px, 4px) translateZ(0); }
+  100% { transform: translate(-12px, -12px) translateZ(0); }
+}
+
+@keyframes circle-4 {
+  0% { transform: translate(80px, -12px) translateZ(0); }
+  33% { transform: translate(76px, -12px) translateZ(0); }
+  66% { transform: translate(112px, -8px) translateZ(0); }
+  100% { transform: translate(80px, -12px) translateZ(0); }
+}
+
+@keyframes circle-5 {
+  0% { transform: translate(12px, -4px) translateZ(0); }
+  33% { transform: translate(84px, 28px) translateZ(0); }
+  66% { transform: translate(40px, -32px) translateZ(0); }
+  100% { transform: translate(12px, -4px) translateZ(0); }
+}
+
+@keyframes circle-6 {
+  0% { transform: translate(56px, 16px) translateZ(0); }
+  33% { transform: translate(28px, -16px) translateZ(0); }
+  66% { transform: translate(76px, -56px) translateZ(0); }
+  100% { transform: translate(56px, 16px) translateZ(0); }
+}
+
+@keyframes circle-7 {
+  0% { transform: translate(8px, 28px) translateZ(0); }
+  33% { transform: translate(8px, 28px) translateZ(0); }
+  66% { transform: translate(20px, -60px) translateZ(0); }
+  100% { transform: translate(8px, 28px) translateZ(0); }
+}
+
+@keyframes circle-8 {
+  0% { transform: translate(28px, -4px) translateZ(0); }
+  33% { transform: translate(32px, -4px) translateZ(0); }
+  66% { transform: translate(56px, -20px) translateZ(0); }
+  100% { transform: translate(28px, -4px) translateZ(0); }
+}
+
+@keyframes circle-9 {
+  0% { transform: translate(20px, -12px) translateZ(0); }
+  33% { transform: translate(20px, -12px) translateZ(0); }
+  66% { transform: translate(80px, -8px) translateZ(0); }
+  100% { transform: translate(20px, -12px) translateZ(0); }
+}
+
+@keyframes circle-10 {
+  0% { transform: translate(64px, 16px) translateZ(0); }
+  33% { transform: translate(68px, 20px) translateZ(0); }
+  66% { transform: translate(100px, 28px) translateZ(0); }
+  100% { transform: translate(64px, 16px) translateZ(0); }
+}
+
+@keyframes circle-11 {
+  0% { transform: translate(4px, 4px) translateZ(0); }
+  33% { transform: translate(4px, 4px) translateZ(0); }
+  66% { transform: translate(68px, 20px) translateZ(0); }
+  100% { transform: translate(4px, 4px) translateZ(0); }
+}
+
+@keyframes circle-12 {
+  0% { transform: translate(52px, 4px) translateZ(0); }
+  33% { transform: translate(56px, 0px) translateZ(0); }
+  66% { transform: translate(60px, -32px) translateZ(0); }
+  100% { transform: translate(52px, 4px) translateZ(0); }
 }
 
 /* Dark mode circles - blue tones */
