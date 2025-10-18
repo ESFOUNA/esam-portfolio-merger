@@ -880,31 +880,63 @@ html, body, #root {
 }
 
 
-/* CRITICAL MOBILE FIXES - Force visibility */
+/* SAMSUNG INTERNET BROWSER COMPATIBILITY FIXES */
 @media (max-width: 768px) {
-  /* Force logo visibility on mobile */
-  .liquid-glass-navbar span {
-    display: block !important;
+  /* Disable problematic backdrop-filter on Samsung Internet */
+  .liquid-glass-navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .dark .liquid-glass-navbar {
+    background: rgba(31, 41, 55, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Force logo visibility */
+  .liquid-glass-navbar h1,
+  .liquid-glass-navbar h1 span {
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
     color: #111827 !important;
   }
   
-  .dark .liquid-glass-navbar span {
+  .dark .liquid-glass-navbar h1 span {
     color: #ffffff !important;
   }
   
-  /* Force theme toggle visibility */
-  .liquid-glass-navbar button svg {
+  /* Force nav items visibility */
+  .liquid-glass-navbar nav a {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
   }
   
-  /* Ensure navbar is visible */
-  .liquid-glass-navbar {
-    display: flex !important;
+  /* Force theme toggle visibility */
+  .liquid-glass-navbar button,
+  .liquid-glass-navbar button svg {
+    display: inline-flex !important;
     visibility: visible !important;
     opacity: 1 !important;
+  }
+  
+  /* Disable animations on Samsung Internet for better performance */
+  .liquid-glass-navbar * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Simplify glass effects */
+  .glass-button {
+    background: rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .dark .glass-button {
+    background: rgba(255, 255, 255, 0.1) !important;
   }
 }

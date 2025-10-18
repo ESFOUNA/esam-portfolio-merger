@@ -67,7 +67,10 @@ export function Navbar() {
         }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl animate-fluid-float"
-        style={{ width: 'clamp(280px, 90vw, 1000px)' }}
+        style={{ 
+          width: 'clamp(280px, 90vw, 1000px)',
+          willChange: 'transform'
+        }}
       >
 
 
@@ -141,22 +144,25 @@ export function Navbar() {
               whileHover="hover"
               className="relative"
             >
-              <div className="relative flex items-center">
-                <span 
-                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 dark:text-white cursor-pointer tracking-wide"
+              <div className="relative flex items-center" style={{ minWidth: '80px' }}>
+                <h1 
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black cursor-pointer tracking-wide"
                   style={{ 
-                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                    fontFamily: 'system-ui, -apple-system, sans-serif',
                     fontWeight: '900',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                    color: 'inherit',
+                    textShadow: 'none',
                     WebkitFontSmoothing: 'antialiased',
-                    MozOsxFontSmoothing: 'grayscale',
-                    display: 'block',
+                    display: 'inline-block',
                     visibility: 'visible',
-                    opacity: '1'
+                    opacity: '1',
+                    margin: '0',
+                    padding: '0',
+                    lineHeight: '1'
                   }}
                 >
-                  ESAM
-                </span>
+                  <span style={{ color: '#111827' }} className="dark:text-white">ESAM</span>
+                </h1>
               </div>
             </motion.div>
           </Link>
