@@ -12,7 +12,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
-    }, 3500); // 3.5 seconds total
+    }, 2500); // 2.5 seconds total - faster loading
 
     return () => clearTimeout(timer);
   }, [onComplete]);

@@ -143,10 +143,12 @@ export function Navbar() {
             >
               <div className="relative flex items-center">
                 <motion.span 
-                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent cursor-pointer tracking-wide"
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white cursor-pointer tracking-wide"
                   style={{ 
-                    fontFamily: 'Arial Black, sans-serif',
-                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                    fontFamily: 'Arial Black, sans-serif, system-ui',
+                    textShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                    WebkitFontSmoothing: 'antialiased',
+                    MozOsxFontSmoothing: 'grayscale'
                   }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
