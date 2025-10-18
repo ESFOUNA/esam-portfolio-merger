@@ -882,17 +882,19 @@ html, body, #root {
 
 /* SAMSUNG INTERNET BROWSER COMPATIBILITY FIXES */
 @media (max-width: 768px) {
-  /* Disable problematic backdrop-filter on Samsung Internet */
+  /* Light glass effect for mobile - matching desktop */
   .liquid-glass-navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(59, 130, 246, 0.2) !important;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1) !important;
   }
   
   .dark .liquid-glass-navbar {
-    background: rgba(31, 41, 55, 0.95) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(17, 24, 39, 0.85) !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15) !important;
   }
   
   /* Force logo visibility */
@@ -970,9 +972,14 @@ html, body, #root {
   }
 }
 
-/* Mobile Dropdown Menu Styling */
+/* Mobile Dropdown Menu Styling - Light with Blue Accents */
 .mobile-dropdown-menu {
   animation: slideDown 0.2s ease-out;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15), 0 4px 10px rgba(0, 0, 0, 0.05) !important;
 }
 
 @keyframes slideDown {
@@ -988,18 +995,49 @@ html, body, #root {
 
 /* Dark mode for mobile dropdown */
 .dark .mobile-dropdown-menu {
-  background: rgba(31, 41, 55, 0.98) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+  background: rgba(17, 24, 39, 0.95) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2), 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Ensure hamburger icon is visible */
+/* Ensure hamburger icon is visible with proper colors */
 .md\:hidden button svg {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  color: #3b82f6 !important;
 }
 
 .dark .md\:hidden button svg {
-  color: #ffffff !important;
+  color: #60a5fa !important;
+}
+
+/* Mobile dropdown links styling */
+.mobile-dropdown-menu a {
+  color: #374151 !important;
+  font-weight: 500 !important;
+}
+
+.mobile-dropdown-menu a:hover {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #3b82f6 !important;
+}
+
+.mobile-dropdown-menu a.text-primary {
+  color: #3b82f6 !important;
+  background: rgba(59, 130, 246, 0.15) !important;
+}
+
+.dark .mobile-dropdown-menu a {
+  color: #e5e7eb !important;
+}
+
+.dark .mobile-dropdown-menu a:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #60a5fa !important;
+}
+
+.dark .mobile-dropdown-menu a.text-primary {
+  color: #60a5fa !important;
+  background: rgba(59, 130, 246, 0.25) !important;
 }

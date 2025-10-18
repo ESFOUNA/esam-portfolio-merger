@@ -218,9 +218,9 @@ export function Navbar() {
               }}
             >
               {mobileMenuOpen ? (
-                <X className="h-5 w-5" style={{ color: '#111827' }} />
+                <X className="h-5 w-5" style={{ color: '#3b82f6' }} />
               ) : (
-                <Menu className="h-5 w-5" style={{ color: '#111827' }} />
+                <Menu className="h-5 w-5" style={{ color: '#3b82f6' }} />
               )}
             </Button>
           </div>
@@ -242,11 +242,8 @@ export function Navbar() {
           className="fixed top-20 left-1/2 transform -translate-x-1/2 z-[60] md:hidden mobile-dropdown-menu"
           style={{ 
             width: 'clamp(250px, 80vw, 320px)',
-            background: 'rgba(255, 255, 255, 0.98)',
-            border: '1px solid rgba(0, 0, 0, 0.1)',
             borderRadius: '16px',
-            padding: '12px',
-            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)'
+            padding: '12px'
           }}
         >
           <nav className="flex flex-col space-y-1">
@@ -255,15 +252,10 @@ export function Navbar() {
                 key={item.label}
                 to={item.href}
                 className={cn(
-                  "text-gray-700 dark:text-gray-200 hover:text-primary text-sm font-medium transition-all duration-200 block py-2.5 px-4 rounded-lg hover:bg-primary/10",
-                  location.pathname === item.href ? "text-primary bg-primary/15 font-semibold" : ""
+                  "text-gray-700 dark:text-gray-200 hover:text-primary text-sm font-medium transition-all duration-200 block py-2.5 px-4 rounded-lg",
+                  location.pathname === item.href ? "text-primary font-semibold" : ""
                 )}
                 onClick={() => setMobileMenuOpen(false)}
-                style={{
-                  display: 'block',
-                  visibility: 'visible',
-                  opacity: '1'
-                }}
               >
                 {item.label}
               </Link>
