@@ -833,43 +833,16 @@ html, body, #root {
   );
 }
 
-/* MOBILE DEVICE VISIBILITY FIXES */
-@media screen and (max-device-width: 768px) {
-  .liquid-glass-navbar {
-    background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(5px) !important;
-    -webkit-backdrop-filter: blur(5px) !important;
-    border: 2px solid rgba(0, 0, 0, 0.2) !important;
-  }
-  
-  .dark .liquid-glass-navbar {
-    background: rgba(31, 41, 55, 0.98) !important;
-    border: 2px solid rgba(255, 255, 255, 0.2) !important;
-  }
-}
-
-/* Responsive sizing only (not colors/effects) */
-@media (max-width: 1024px) {
-  .liquid-glass-navbar {
-    width: 95vw !important;
-    min-width: 600px !important;
-  }
-}
-
+/* Responsive sizing - maintains same visual style */
 @media (max-width: 768px) {
   .liquid-glass-navbar {
-    padding: 0.75rem 1rem !important;
-    width: 95vw !important;
-    min-width: 320px !important;
+    padding: 0.5rem 1rem !important;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .liquid-glass-navbar {
-    top: 1rem !important;
     padding: 0.5rem 0.75rem !important;
-    width: 90vw !important;
-    min-width: 300px !important;
   }
 }
 
@@ -906,127 +879,3 @@ html, body, #root {
   }
 }
 
-/* Professional Mobile Menu */
-.professional-mobile-menu {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 
-    0 10px 25px rgba(0, 0, 0, 0.1),
-    0 4px 10px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-
-.dark .professional-mobile-menu {
-  background: rgba(17, 24, 39, 0.95);
-  border: 1px solid rgba(75, 85, 99, 0.3);
-  box-shadow: 
-    0 10px 25px rgba(0, 0, 0, 0.3),
-    0 4px 10px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(75, 85, 99, 0.4);
-}
-
-/* Mobile Menu Animation */
-@media (max-width: 768px) {
-  .professional-mobile-menu {
-    animation: slideDown 0.2s ease-out;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-10px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-  }
-}
-
-/* Ensure mobile menu is always visible */
-.liquid-glass-dropdown {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}/* Fix 
-font loading issues */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-/* Ensure fonts load properly */
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Force font fallbacks for logo */
-.navbar-logo {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  font-weight: 900 !important;
-  font-display: swap;
-}
-
-/* Prevent invisible text during font load */
-.font-display-swap {
-  font-display: swap;
-}/* BU
-LLETPROOF MOBILE FONT FIXES */
-@media screen and (max-device-width: 768px) {
-  * {
-    font-display: swap !important;
-    -webkit-text-size-adjust: 100% !important;
-    -ms-text-size-adjust: 100% !important;
-    text-rendering: optimizeLegibility !important;
-  }
-  
-  /* Force system fonts on mobile devices */
-  .navbar-logo {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
-    font-weight: 900 !important;
-    font-display: swap !important;
-  }
-}
-
-/* iOS Safari specific fixes */
-@supports (-webkit-touch-callout: none) {
-  .navbar-logo {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif !important;
-    -webkit-font-smoothing: antialiased !important;
-  }
-}
-
-/* Android Chrome specific fixes */
-@supports (-webkit-appearance: none) and (not (-webkit-touch-callout: none)) {
-  .navbar-logo {
-    font-family: "Roboto", system-ui, Arial, sans-serif !important;
-    -webkit-font-smoothing: antialiased !important;
-  }
-}/* SIMP
-LE RESPONSIVE NAVBAR */
-@media (max-width: 768px) {
-  .mobile-safe-navbar {
-    padding: 12px 16px !important;
-    width: 90vw !important;
-    max-width: 400px !important;
-  }
-  
-  .mobile-logo {
-    font-size: 20px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .mobile-safe-navbar {
-    top: 8px !important;
-    padding: 10px 12px !important;
-    width: 95vw !important;
-    max-width: 350px !important;
-  }
-  
-  .mobile-logo {
-    font-size: 18px !important;
-  }
-}
