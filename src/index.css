@@ -969,3 +969,37 @@ html, body, #root {
     transition-duration: 0s !important;
   }
 }
+
+/* Mobile Dropdown Menu Styling */
+.mobile-dropdown-menu {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* Dark mode for mobile dropdown */
+.dark .mobile-dropdown-menu {
+  background: rgba(31, 41, 55, 0.98) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure hamburger icon is visible */
+.md\:hidden button svg {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.dark .md\:hidden button svg {
+  color: #ffffff !important;
+}

@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
@@ -17,6 +20,7 @@ const navItems: NavItem[] = [
 ];
 
 export function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   const logoContainerVariants = {
@@ -167,8 +171,8 @@ export function Navbar() {
             </motion.div>
           </Link>
 
-          {/* Center: Navigation */}
-          <nav className="flex items-center space-x-1 sm:space-x-2 md:space-x-4 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+          {/* Center: Navigation - Desktop Only */}
+          <nav className="hidden md:flex items-center space-x-4 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.label}
@@ -179,7 +183,7 @@ export function Navbar() {
                 <Link
                   to={item.href}
                   className={cn(
-                    "text-gray-700 dark:text-gray-200 hover:text-primary text-xs sm:text-sm font-medium transition-all duration-300 relative px-1 sm:px-2 py-2 rounded-lg group whitespace-nowrap",
+                    "text-gray-700 dark:text-gray-200 hover:text-primary text-sm font-medium transition-all duration-300 relative px-2 py-2 rounded-lg group whitespace-nowrap",
                     "hover:bg-white/20 dark:hover:bg-gray-800/30 backdrop-blur-sm glass-button",
                     location.pathname === item.href 
                       ? "text-primary bg-primary/10 backdrop-blur-sm after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full" 
@@ -198,13 +202,75 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Right: Theme Toggle */}
-          <div>
+          {/* Right: Theme Toggle & Mobile Menu Button */}
+          <div className="flex items-center space-x-2">
             <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden rounded-full glass-button"
+              aria-label="Toggle menu"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" style={{ color: '#111827' }} />
+              ) : (
+                <Menu className="h-5 w-5" style={{ color: '#111827' }} />
+              )}
+            </Button>
           </div>
 
         </div>
       </motion.header>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/20 z-[45] md:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Dropdown Menu */}
+      {mobileMenuOpen && (
+        <div 
+          className="fixed top-20 left-1/2 transform -translate-x-1/2 z-[60] md:hidden mobile-dropdown-menu"
+          style={{ 
+            width: 'clamp(250px, 80vw, 320px)',
+            background: 'rgba(255, 255, 255, 0.98)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            borderRadius: '16px',
+            padding: '12px',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)'
+          }}
+        >
+          <nav className="flex flex-col space-y-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
+                className={cn(
+                  "text-gray-700 dark:text-gray-200 hover:text-primary text-sm font-medium transition-all duration-200 block py-2.5 px-4 rounded-lg hover:bg-primary/10",
+                  location.pathname === item.href ? "text-primary bg-primary/15 font-semibold" : ""
+                )}
+                onClick={() => setMobileMenuOpen(false)}
+                style={{
+                  display: 'block',
+                  visibility: 'visible',
+                  opacity: '1'
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
       </div>
     </>
   );
