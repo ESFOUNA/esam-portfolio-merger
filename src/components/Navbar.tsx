@@ -78,64 +78,20 @@ export function Navbar() {
       >
 
 
-        {/* Liquid Glass Background Effects */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
-          {/* Flowing liquid glass bubbles */}
-          <motion.div
-            className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-400/30 to-purple-500/30 rounded-full blur-md"
-            animate={{
-              x: [0, 20, 0],
-              y: [0, -10, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute -top-2 right-8 w-24 h-24 bg-gradient-to-br from-cyan-300/25 to-blue-400/25 rounded-full blur-lg"
-            animate={{
-              x: [0, -15, 0],
-              y: [0, 12, 0],
-              scale: [1, 0.9, 1],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}
-          />
-          <motion.div
-            className="absolute top-2 left-1/3 w-12 h-12 bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 rounded-full blur-sm"
-            animate={{
-              x: [0, 10, 0],
-              y: [0, 8, 0],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
-          />
-          
-          {/* Glass shimmer wave */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-3xl"
-            animate={{
-              x: ['-100%', '100%'],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              repeatDelay: 2
-            }}
-          />
+        {/* Animated Gradient Circles */}
+        <div className="absolute inset-0 overflow-hidden rounded-3xl navbar-circles">
+          <div className="circle circle-1"></div>
+          <div className="circle circle-2"></div>
+          <div className="circle circle-3"></div>
+          <div className="circle circle-4"></div>
+          <div className="circle circle-5"></div>
+          <div className="circle circle-6"></div>
+          <div className="circle circle-7"></div>
+          <div className="circle circle-8"></div>
+          <div className="circle circle-9"></div>
+          <div className="circle circle-10"></div>
+          <div className="circle circle-11"></div>
+          <div className="circle circle-12"></div>
         </div>
 
         <div className="flex items-center justify-between relative z-10 w-full">
