@@ -166,10 +166,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 initial="hidden"
                 animate={["visible", "float"]}
                 style={{ 
-                  fontFamily: 'Arial Black, sans-serif',
-                  transformStyle: 'preserve-3d'
+                  fontFamily: 'system-ui, -apple-system, Arial Black, sans-serif',
+                  transformStyle: 'preserve-3d',
+                  color: '#3b82f6',
+                  textShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(147, 51, 234, 0.3)'
                 }}
-                className="text-7xl md:text-9xl font-bold bg-gradient-to-br from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent mx-2 drop-shadow-2xl"
+                className="text-7xl md:text-9xl font-black mx-2"
               >
                 {letter}
               </motion.span>
