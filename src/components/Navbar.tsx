@@ -59,7 +59,7 @@ export function Navbar() {
       </div>
       
       <div className="relative">
-        <motion.header
+      <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ 
           opacity: 1, 
