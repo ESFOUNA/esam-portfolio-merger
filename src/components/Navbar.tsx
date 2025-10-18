@@ -142,19 +142,21 @@ export function Navbar() {
               className="relative"
             >
               <div className="relative flex items-center">
-                <motion.span 
-                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white cursor-pointer tracking-wide"
+                <span 
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 dark:text-white cursor-pointer tracking-wide"
                   style={{ 
-                    fontFamily: 'Arial Black, sans-serif, system-ui',
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                    fontWeight: '900',
                     textShadow: '0 2px 4px rgba(0,0,0,0.1)',
                     WebkitFontSmoothing: 'antialiased',
-                    MozOsxFontSmoothing: 'grayscale'
+                    MozOsxFontSmoothing: 'grayscale',
+                    display: 'block',
+                    visibility: 'visible',
+                    opacity: '1'
                   }}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
                 >
                   ESAM
-                </motion.span>
+                </span>
               </div>
             </motion.div>
           </Link>

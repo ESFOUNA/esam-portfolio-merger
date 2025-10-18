@@ -30,9 +30,9 @@ const ThemeToggle = () => {
           className="relative z-10"
         >
           {theme === 'light' ? (
-            <Moon className="h-5 w-5 text-gray-900 dark:text-white transition-colors group-hover:text-primary" />
+            <Moon className="h-5 w-5 transition-colors group-hover:text-primary" style={{ color: '#111827' }} />
           ) : (
-            <Sun className="h-5 w-5 text-gray-900 dark:text-white transition-colors group-hover:text-primary" />
+            <Sun className="h-5 w-5 transition-colors group-hover:text-primary" style={{ color: '#ffffff' }} />
           )}
         </motion.div>
         

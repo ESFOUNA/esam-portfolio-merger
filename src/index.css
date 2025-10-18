@@ -879,3 +879,32 @@ html, body, #root {
   }
 }
 
+
+/* CRITICAL MOBILE FIXES - Force visibility */
+@media (max-width: 768px) {
+  /* Force logo visibility on mobile */
+  .liquid-glass-navbar span {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #111827 !important;
+  }
+  
+  .dark .liquid-glass-navbar span {
+    color: #ffffff !important;
+  }
+  
+  /* Force theme toggle visibility */
+  .liquid-glass-navbar button svg {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Ensure navbar is visible */
+  .liquid-glass-navbar {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
