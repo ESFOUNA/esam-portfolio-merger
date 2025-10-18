@@ -894,37 +894,9 @@ body,
 
 
 /* ANIMATED GRADIENT NAVBAR - MOBILE & DESKTOP */
-.liquid-glass-navbar {
-  background: radial-gradient(circle, #ffd215, #fff172 80%) !important;
-  box-shadow: 0 0 20px rgba(255, 223, 87, 0.6),
-    inset 0 3px 12px rgba(255, 223, 52, 0.9),
-    inset 0 -3px 4px rgba(255, 250, 215, 0.8) !important;
-  border: none !important;
-  overflow: hidden !important;
-  position: relative !important;
-}
-
-.dark .liquid-glass-navbar {
-  background: radial-gradient(circle, #3b82f6, #60a5fa 80%) !important;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6),
-    inset 0 3px 12px rgba(59, 130, 246, 0.9),
-    inset 0 -3px 4px rgba(96, 165, 250, 0.8) !important;
-}
+/* Removed - using animated gradient from above */
 
 @media (max-width: 768px) {
-  .liquid-glass-navbar {
-    background: radial-gradient(circle, #ffd215, #fff172 80%) !important;
-    box-shadow: 0 0 20px rgba(255, 223, 87, 0.6),
-      inset 0 3px 12px rgba(255, 223, 52, 0.9),
-      inset 0 -3px 4px rgba(255, 250, 215, 0.8) !important;
-  }
-
-  .dark .liquid-glass-navbar {
-    background: radial-gradient(circle, #3b82f6, #60a5fa 80%) !important;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6),
-      inset 0 3px 12px rgba(59, 130, 246, 0.9),
-      inset 0 -3px 4px rgba(96, 165, 250, 0.8) !important;
-  }
 
   /* Force logo visibility */
   .liquid-glass-navbar h1,
@@ -969,21 +941,8 @@ body,
   }
 }
 
-/* SAMSUNG INTERNET - SOLID COLORS */
+/* SAMSUNG INTERNET - Keep animations but ensure visibility */
 @supports (-webkit-appearance:none) and (not (-webkit-overflow-scrolling: touch)) {
-  .liquid-glass-navbar {
-    background: #ffffff !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border: 2px solid #3b82f6 !important;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
-  }
-
-  .dark .liquid-glass-navbar {
-    background: #1f2937 !important;
-    border: 2px solid #3b82f6 !important;
-  }
-
   .liquid-glass-navbar * {
     text-shadow: none !important;
     -webkit-text-fill-color: initial !important;
@@ -993,17 +952,12 @@ body,
 
   .liquid-glass-navbar h1,
   .liquid-glass-navbar h1 span {
-    color: #111827 !important;
+    color: #ffffff !important;
   }
 
   .dark .liquid-glass-navbar h1,
   .dark .liquid-glass-navbar h1 span {
     color: #ffffff !important;
-  }
-
-  * {
-    animation-duration: 0s !important;
-    transition-duration: 0s !important;
   }
 }
 
