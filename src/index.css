@@ -706,11 +706,11 @@ body,
   100% { background-position: 200% 50%; }
 }
 
-/* Logo visibility fix */
+/* Logo visibility - dark in light mode, white in dark mode */
 .liquid-glass-navbar h1,
 .liquid-glass-navbar h1 span {
-  color: #ffffff !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  color: #1f2937 !important;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5) !important;
 }
 
 .dark .liquid-glass-navbar h1,
@@ -922,8 +922,8 @@ body,
     display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    color: #1f2937 !important;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5) !important;
   }
 
   .dark .liquid-glass-navbar h1 span {
@@ -965,8 +965,8 @@ body,
 @supports (-webkit-appearance:none) and (not (-webkit-overflow-scrolling: touch)) {
   .liquid-glass-navbar h1,
   .liquid-glass-navbar h1 span {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
+    color: #1f2937 !important;
+    -webkit-text-fill-color: #1f2937 !important;
   }
 
   .dark .liquid-glass-navbar h1,
