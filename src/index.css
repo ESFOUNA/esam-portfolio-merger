@@ -725,13 +725,11 @@ body,
   mask-image: radial-gradient(white, black);
 }
 
-/* Animated Particles */
+/* Animated Particles - Spread Across Full Width */
 .navbar-particle {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   filter: blur(8px);
   transform: translateZ(0);
@@ -739,6 +737,20 @@ body,
   animation-timing-function: var(--nav-easing);
   animation-iteration-count: infinite;
 }
+
+/* Position particles across full navbar width */
+.navbar-particle.particle-1 { left: 5%; top: 50%; }
+.navbar-particle.particle-2 { left: 15%; top: 20%; }
+.navbar-particle.particle-3 { left: 25%; top: 70%; }
+.navbar-particle.particle-4 { left: 35%; top: 30%; }
+.navbar-particle.particle-5 { left: 45%; top: 60%; }
+.navbar-particle.particle-6 { left: 55%; top: 40%; }
+.navbar-particle.particle-7 { left: 65%; top: 80%; }
+.navbar-particle.particle-8 { left: 75%; top: 25%; }
+.navbar-particle.particle-9 { left: 85%; top: 55%; }
+.navbar-particle.particle-10 { left: 90%; top: 35%; }
+.navbar-particle.particle-11 { left: 10%; top: 45%; }
+.navbar-particle.particle-12 { left: 95%; top: 65%; }
 
 /* Particle Colors and Blur */
 .navbar-particle.particle-1,
@@ -782,88 +794,89 @@ body,
 .navbar-particle.particle-11 { animation-name: navParticle11; }
 .navbar-particle.particle-12 { animation-name: navParticle12; }
 
+/* Full-Width Particle Animations */
 @keyframes navParticle1 {
-  0% { transform: translate(0px, -40px) translateZ(0); }
-  33% { transform: translate(0px, 16px) translateZ(0); }
-  66% { transform: translate(12px, 64px) translateZ(0); }
-  100% { transform: translate(0px, -40px) translateZ(0); }
+  0% { transform: translate(-20px, -30px) translateZ(0); }
+  33% { transform: translate(40px, 20px) translateZ(0); }
+  66% { transform: translate(-10px, 50px) translateZ(0); }
+  100% { transform: translate(-20px, -30px) translateZ(0); }
 }
 
 @keyframes navParticle2 {
-  0% { transform: translate(92px, 8px) translateZ(0); }
-  33% { transform: translate(80px, -10px) translateZ(0); }
-  66% { transform: translate(72px, -48px) translateZ(0); }
-  100% { transform: translate(92px, 8px) translateZ(0); }
+  0% { transform: translate(0px, 10px) translateZ(0); }
+  33% { transform: translate(-30px, -20px) translateZ(0); }
+  66% { transform: translate(30px, -40px) translateZ(0); }
+  100% { transform: translate(0px, 10px) translateZ(0); }
 }
 
 @keyframes navParticle3 {
-  0% { transform: translate(-12px, -12px) translateZ(0); }
-  33% { transform: translate(20px, 12px) translateZ(0); }
-  66% { transform: translate(12px, 4px) translateZ(0); }
-  100% { transform: translate(-12px, -12px) translateZ(0); }
+  0% { transform: translate(-15px, -15px) translateZ(0); }
+  33% { transform: translate(25px, 15px) translateZ(0); }
+  66% { transform: translate(10px, -25px) translateZ(0); }
+  100% { transform: translate(-15px, -15px) translateZ(0); }
 }
 
 @keyframes navParticle4 {
-  0% { transform: translate(80px, -12px) translateZ(0); }
-  33% { transform: translate(76px, -12px) translateZ(0); }
-  66% { transform: translate(112px, -8px) translateZ(0); }
-  100% { transform: translate(80px, -12px) translateZ(0); }
+  0% { transform: translate(20px, -20px) translateZ(0); }
+  33% { transform: translate(-20px, 25px) translateZ(0); }
+  66% { transform: translate(35px, -10px) translateZ(0); }
+  100% { transform: translate(20px, -20px) translateZ(0); }
 }
 
 @keyframes navParticle5 {
-  0% { transform: translate(12px, -4px) translateZ(0); }
-  33% { transform: translate(84px, 28px) translateZ(0); }
-  66% { transform: translate(40px, -32px) translateZ(0); }
-  100% { transform: translate(12px, -4px) translateZ(0); }
+  0% { transform: translate(10px, -10px) translateZ(0); }
+  33% { transform: translate(-25px, 30px) translateZ(0); }
+  66% { transform: translate(20px, -35px) translateZ(0); }
+  100% { transform: translate(10px, -10px) translateZ(0); }
 }
 
 @keyframes navParticle6 {
-  0% { transform: translate(56px, 16px) translateZ(0); }
-  33% { transform: translate(28px, -16px) translateZ(0); }
-  66% { transform: translate(76px, -56px) translateZ(0); }
-  100% { transform: translate(56px, 16px) translateZ(0); }
+  0% { transform: translate(15px, 20px) translateZ(0); }
+  33% { transform: translate(-30px, -15px) translateZ(0); }
+  66% { transform: translate(25px, 40px) translateZ(0); }
+  100% { transform: translate(15px, 20px) translateZ(0); }
 }
 
 @keyframes navParticle7 {
-  0% { transform: translate(8px, 28px) translateZ(0); }
-  33% { transform: translate(8px, 28px) translateZ(0); }
-  66% { transform: translate(20px, -60px) translateZ(0); }
-  100% { transform: translate(8px, 28px) translateZ(0); }
+  0% { transform: translate(-10px, 25px) translateZ(0); }
+  33% { transform: translate(30px, -20px) translateZ(0); }
+  66% { transform: translate(-20px, 45px) translateZ(0); }
+  100% { transform: translate(-10px, 25px) translateZ(0); }
 }
 
 @keyframes navParticle8 {
-  0% { transform: translate(28px, -4px) translateZ(0); }
-  33% { transform: translate(32px, -4px) translateZ(0); }
-  66% { transform: translate(56px, -20px) translateZ(0); }
-  100% { transform: translate(28px, -4px) translateZ(0); }
+  0% { transform: translate(25px, -15px) translateZ(0); }
+  33% { transform: translate(-15px, 20px) translateZ(0); }
+  66% { transform: translate(40px, -25px) translateZ(0); }
+  100% { transform: translate(25px, -15px) translateZ(0); }
 }
 
 @keyframes navParticle9 {
-  0% { transform: translate(20px, -12px) translateZ(0); }
-  33% { transform: translate(20px, -12px) translateZ(0); }
-  66% { transform: translate(80px, -8px) translateZ(0); }
-  100% { transform: translate(20px, -12px) translateZ(0); }
+  0% { transform: translate(-20px, 15px) translateZ(0); }
+  33% { transform: translate(35px, -25px) translateZ(0); }
+  66% { transform: translate(-10px, 35px) translateZ(0); }
+  100% { transform: translate(-20px, 15px) translateZ(0); }
 }
 
 @keyframes navParticle10 {
-  0% { transform: translate(64px, 16px) translateZ(0); }
-  33% { transform: translate(68px, 20px) translateZ(0); }
-  66% { transform: translate(100px, 28px) translateZ(0); }
-  100% { transform: translate(64px, 16px) translateZ(0); }
+  0% { transform: translate(30px, 20px) translateZ(0); }
+  33% { transform: translate(-25px, -15px) translateZ(0); }
+  66% { transform: translate(15px, 40px) translateZ(0); }
+  100% { transform: translate(30px, 20px) translateZ(0); }
 }
 
 @keyframes navParticle11 {
-  0% { transform: translate(4px, 4px) translateZ(0); }
-  33% { transform: translate(4px, 4px) translateZ(0); }
-  66% { transform: translate(68px, 20px) translateZ(0); }
-  100% { transform: translate(4px, 4px) translateZ(0); }
+  0% { transform: translate(5px, 10px) translateZ(0); }
+  33% { transform: translate(-20px, -20px) translateZ(0); }
+  66% { transform: translate(30px, 25px) translateZ(0); }
+  100% { transform: translate(5px, 10px) translateZ(0); }
 }
 
 @keyframes navParticle12 {
-  0% { transform: translate(52px, 4px) translateZ(0); }
-  33% { transform: translate(56px, 0px) translateZ(0); }
-  66% { transform: translate(60px, -32px) translateZ(0); }
-  100% { transform: translate(52px, 4px) translateZ(0); }
+  0% { transform: translate(-15px, -10px) translateZ(0); }
+  33% { transform: translate(20px, 30px) translateZ(0); }
+  66% { transform: translate(-25px, -30px) translateZ(0); }
+  100% { transform: translate(-15px, -10px) translateZ(0); }
 }
 
 /* Logo visibility - dark in light mode, white in dark mode */
