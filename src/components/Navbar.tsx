@@ -130,8 +130,8 @@ export function Navbar() {
             </motion.div>
           </Link>
 
-          {/* Center: Navigation - Desktop Only */}
-          <nav className="hidden md:flex items-center space-x-4 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+          {/* Center: Navigation - Desktop & Tablet */}
+          <nav className="hidden min-[641px]:flex items-center space-x-4 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.label}
@@ -161,17 +161,16 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Right: Theme Toggle & Mobile Menu Button */}
+          {/* Right: Theme Toggle & Mobile Menu Button (PHONES ONLY) */}
           <div className="flex items-center space-x-2">
             <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden rounded-full glass-button"
+              className="hidden max-[640px]:inline-flex rounded-full glass-button"
               aria-label="Toggle menu"
               style={{
-                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center'
               }}
@@ -187,18 +186,18 @@ export function Navbar() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - PHONES ONLY */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/20 z-[45] md:hidden"
+          className="fixed inset-0 bg-black/20 z-[45] min-[641px]:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu - PHONES ONLY */}
       {mobileMenuOpen && (
         <div 
-          className="fixed top-24 right-4 z-[60] md:hidden mobile-dropdown-menu"
+          className="fixed top-24 right-4 z-[60] min-[641px]:hidden mobile-dropdown-menu"
           style={{ 
             width: 'auto',
             minWidth: '140px',
