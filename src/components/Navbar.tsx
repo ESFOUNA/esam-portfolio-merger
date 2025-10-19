@@ -64,18 +64,37 @@ export function Navbar() {
       
       <div className="relative">
       <motion.header
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ 
-          opacity: 1, 
-          y: 0,
-        }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl animate-fluid-float"
-        style={{ 
-          width: 'clamp(280px, 90vw, 1000px)',
-          willChange: 'transform'
-        }}
-      >
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ 
+    opacity: 1, 
+    // On reproduit les étapes de votre keyframe CSS ici
+    y: [0, -10, 5, 0],
+    rotate: [0, 1, -1, 0]
+  }}
+  transition={{ 
+    // Transition pour l'opacité (s'exécute une seule fois)
+    opacity: { duration: 0.8, ease: "easeOut" },
+    // Transitions pour le flottement (en boucle infinie)
+    y: {
+      duration: 6, // La durée de votre animation CSS
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut"
+    },
+    rotate: {
+      duration: 6, // La même durée pour synchroniser
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut"
+    }
+  }}
+  // IMPORTANT : Supprimez 'animate-fluid-float' de la liste des classes
+  className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl"
+  style={{ 
+    width: 'clamp(280px, 90vw, 1000px)',
+    willChange: 'transform'
+  }}
+>
 
 
         {/* Animated Particles Effect - Like UIVERSE Button */}

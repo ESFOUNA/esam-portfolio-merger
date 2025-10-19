@@ -1106,12 +1106,6 @@ body,
     opacity: 1 !important;
   }
 
-  /* Disable animations */
-  .liquid-glass-navbar * {
-    animation: none !important;
-    transition: none !important;
-  }
-
   /* Remove blur from buttons */
   .glass-button {
     background: transparent !important;
@@ -1724,17 +1718,78 @@ MATED CIRCLES FOR NAVBAR */
   /* Use fast animation speed always on mobile - no hover needed */
   .liquid-glass-navbar {
     --nav-duration: 1.4s !important;
-    animation: none;
   }
   
   /* Force particles to animate continuously on mobile */
   .navbar-particle {
+    position: absolute !important;
+    display: block !important;
+    visibility: visible !important;
     width: 30px !important;
     height: 30px !important;
-    opacity: 0.6 !important;
+    opacity: 0.8 !important;
+    border-radius: 50% !important;
     animation-play-state: running !important;
     animation-duration: 1.4s !important;
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
+    animation-fill-mode: both !important;
     will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Assign animation names and positions to each particle - using shorthand for maximum compatibility */
+  .navbar-particle.particle-1 { 
+    left: 5% !important; top: 50% !important;
+    animation: navParticle1 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-2 { 
+    left: 15% !important; top: 20% !important;
+    animation: navParticle2 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-3 { 
+    left: 25% !important; top: 70% !important;
+    animation: navParticle3 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-4 { 
+    left: 35% !important; top: 30% !important;
+    animation: navParticle4 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-5 { 
+    left: 45% !important; top: 60% !important;
+    animation: navParticle5 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-6 { 
+    left: 55% !important; top: 40% !important;
+    animation: navParticle6 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-7 { 
+    left: 65% !important; top: 80% !important;
+    animation: navParticle7 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-8 { 
+    left: 75% !important; top: 25% !important;
+    animation: navParticle8 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-9 { 
+    left: 85% !important; top: 55% !important;
+    animation: navParticle9 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-10 { 
+    left: 90% !important; top: 35% !important;
+    animation: navParticle10 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-11 { 
+    left: 10% !important; top: 45% !important;
+    animation: navParticle11 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-12 { 
+    left: 95% !important; top: 65% !important;
+    animation: navParticle12 1.4s linear infinite both !important;
   }
   
   /* Reduce blur for refined look */
@@ -1828,9 +1883,56 @@ MATED CIRCLES FOR NAVBAR */
   }
 }
 
-/* Ensure animations work on Samsung Internet */
-@supports (-webkit-appearance:none) and (not (-webkit-overflow-scrolling: touch)) {
+/* Override prefers-reduced-motion for navbar particles */
+@media (prefers-reduced-motion: reduce) {
   .navbar-particle {
+    animation: unset !important;
+  }
+  
+  .navbar-particle.particle-1 { 
+    animation: navParticle1 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-2 { 
+    animation: navParticle2 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-3 { 
+    animation: navParticle3 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-4 { 
+    animation: navParticle4 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-5 { 
+    animation: navParticle5 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-6 { 
+    animation: navParticle6 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-7 { 
+    animation: navParticle7 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-8 { 
+    animation: navParticle8 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-9 { 
+    animation: navParticle9 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-10 { 
+    animation: navParticle10 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-11 { 
+    animation: navParticle11 1.4s linear infinite both !important;
+  }
+  .navbar-particle.particle-12 { 
+    animation: navParticle12 1.4s linear infinite both !important;
+  }
+}
+
+/* Ensure animations work on Samsung Internet and all WebKit browsers */
+@supports (-webkit-appearance:none) {
+  .navbar-particle {
+    -webkit-animation-play-state: running !important;
     animation-play-state: running !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }
