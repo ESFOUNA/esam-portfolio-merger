@@ -1730,3 +1730,115 @@ MATED CIRCLES FOR NAVBAR */
 .dark .liquid-glass-navbar nav a::before {
   background: radial-gradient(circle, rgba(96, 165, 250, 0.3), transparent 70%);
 }
+
+
+/* MOBILE FIXES - Refined and Animated */
+@media (max-width: 768px) {
+  /* Ensure animations are NOT disabled on mobile */
+  .liquid-glass-navbar {
+    --nav-duration: 7s !important;
+    animation: none; /* Remove any conflicting animations */
+  }
+  
+  /* Force particles to animate on mobile */
+  .navbar-particle {
+    width: 30px !important;
+    height: 30px !important;
+    opacity: 0.5 !important;
+    animation-play-state: running !important;
+    will-change: transform;
+  }
+  
+  /* Reduce blur for refined look */
+  .navbar-particle.particle-1,
+  .navbar-particle.particle-9,
+  .navbar-particle.particle-10 {
+    filter: blur(4px) !important;
+  }
+  
+  .navbar-particle.particle-3,
+  .navbar-particle.particle-4 {
+    filter: blur(6px) !important;
+  }
+  
+  .navbar-particle.particle-5,
+  .navbar-particle.particle-6 {
+    filter: blur(7px) !important;
+  }
+  
+  .navbar-particle.particle-2,
+  .navbar-particle.particle-7,
+  .navbar-particle.particle-8,
+  .navbar-particle.particle-11,
+  .navbar-particle.particle-12 {
+    filter: blur(5px) !important;
+  }
+  
+  /* Lighter, more refined gradient */
+  .liquid-glass-navbar {
+    background: radial-gradient(
+      circle, 
+      rgba(255, 210, 21, 0.4), 
+      rgba(255, 241, 114, 0.3) 80%
+    ) !important;
+    box-shadow: 0 0 10px rgba(255, 223, 87, 0.3) !important;
+  }
+  
+  .dark .liquid-glass-navbar {
+    background: radial-gradient(
+      circle, 
+      rgba(59, 130, 246, 0.4), 
+      rgba(96, 165, 250, 0.3) 80%
+    ) !important;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3) !important;
+  }
+  
+  /* Softer inset shadows */
+  .navbar-inset-shadow {
+    box-shadow: inset 0 2px 8px rgba(255, 223, 52, 0.3),
+                inset 0 -2px 3px rgba(255, 250, 215, 0.3) !important;
+  }
+  
+  .dark .navbar-inset-shadow {
+    box-shadow: inset 0 2px 8px rgba(59, 130, 246, 0.3),
+                inset 0 -2px 3px rgba(96, 165, 250, 0.3) !important;
+  }
+  
+  /* Ensure particles wrapper doesn't block animations */
+  .navbar-particles-wrapper {
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Lighter particle colors for mobile */
+  .navbar-particle.particle-1,
+  .navbar-particle.particle-9,
+  .navbar-particle.particle-10 {
+    background: rgba(255, 232, 26, 0.4) !important;
+  }
+  
+  .navbar-particle.particle-3,
+  .navbar-particle.particle-4 {
+    background: rgba(26, 35, 255, 0.4) !important;
+  }
+  
+  .navbar-particle.particle-5,
+  .navbar-particle.particle-6 {
+    background: rgba(226, 27, 218, 0.4) !important;
+  }
+  
+  .navbar-particle.particle-2,
+  .navbar-particle.particle-7,
+  .navbar-particle.particle-8,
+  .navbar-particle.particle-11,
+  .navbar-particle.particle-12 {
+    background: rgba(255, 163, 26, 0.4) !important;
+  }
+}
+
+/* Ensure animations work on Samsung Internet */
+@supports (-webkit-appearance:none) and (not (-webkit-overflow-scrolling: touch)) {
+  .navbar-particle {
+    animation-play-state: running !important;
+  }
+}
