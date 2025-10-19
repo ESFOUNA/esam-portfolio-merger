@@ -908,26 +908,7 @@ body,
   100% { transform: translateX(100%); }
 }
 
-.liquid-glass-navbar:hover {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0.4) 25%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.35) 75%,
-      rgba(255, 255, 255, 0.25) 100%);
-  backdrop-filter: blur(50px) saturate(220%) brightness(115%);
-  -webkit-backdrop-filter: blur(50px) saturate(220%) brightness(115%);
-  transform: translateY(-1px) translateX(-50%);
-}
-
-.dark .liquid-glass-navbar:hover {
-  background: linear-gradient(135deg,
-      rgba(17, 24, 39, 0.5) 0%,
-      rgba(30, 41, 59, 0.6) 25%,
-      rgba(17, 24, 39, 0.4) 50%,
-      rgba(30, 41, 59, 0.55) 75%,
-      rgba(17, 24, 39, 0.45) 100%);
-}
+/* Removed - using UIVERSE animated gradient instead */
 
 /* Liquid Glass Dropdown */
 .liquid-glass-dropdown {
