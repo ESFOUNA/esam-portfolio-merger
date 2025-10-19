@@ -78,10 +78,24 @@ export function Navbar() {
       >
 
 
-        {/* Subtle Shine Effect */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine"></div>
+        {/* Animated Particles Effect - Like UIVERSE Button */}
+        <div className="absolute inset-0 overflow-hidden rounded-3xl navbar-particles-wrapper">
+          <div className="navbar-particle particle-1"></div>
+          <div className="navbar-particle particle-2"></div>
+          <div className="navbar-particle particle-3"></div>
+          <div className="navbar-particle particle-4"></div>
+          <div className="navbar-particle particle-5"></div>
+          <div className="navbar-particle particle-6"></div>
+          <div className="navbar-particle particle-7"></div>
+          <div className="navbar-particle particle-8"></div>
+          <div className="navbar-particle particle-9"></div>
+          <div className="navbar-particle particle-10"></div>
+          <div className="navbar-particle particle-11"></div>
+          <div className="navbar-particle particle-12"></div>
         </div>
+        
+        {/* Inset Shadow Overlay for Depth */}
+        <div className="absolute inset-0 rounded-3xl pointer-events-none navbar-inset-shadow"></div>
 
         <div className="flex items-center justify-between relative z-10 w-full">
           {/* Left: Logo */}

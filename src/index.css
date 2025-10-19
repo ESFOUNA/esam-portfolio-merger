@@ -672,38 +672,198 @@ body,
   }
 }
 
-/* Clean Animated Gradient Navbar */
+/* Premium UIVERSE-Style Animated Navbar */
 .liquid-glass-navbar {
-  background: linear-gradient(90deg, 
-    rgba(59, 130, 246, 0.9) 0%, 
-    rgba(147, 51, 234, 0.9) 25%, 
-    rgba(236, 72, 153, 0.9) 50%, 
-    rgba(147, 51, 234, 0.9) 75%, 
-    rgba(59, 130, 246, 0.9) 100%);
-  background-size: 200% 100%;
-  animation: gradientFlow 8s linear infinite;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  --nav-duration: 7s;
+  --nav-easing: linear;
+  --nav-color-1: rgba(255, 163, 26, 0.7);
+  --nav-color-2: rgba(26, 35, 255, 0.8);
+  --nav-color-3: rgba(226, 27, 218, 0.8);
+  --nav-color-4: rgba(255, 232, 26, 0.7);
+  --nav-shadow: rgba(255, 223, 87, 0.5);
+  --nav-shadow-inset-top: rgba(255, 223, 52, 0.9);
+  --nav-shadow-inset-bottom: rgba(255, 250, 215, 0.8);
+  --nav-radial-inner: #ffd215;
+  --nav-radial-outer: #fff172;
+  
+  background: radial-gradient(circle, var(--nav-radial-inner), var(--nav-radial-outer) 80%);
+  box-shadow: 0 0 20px var(--nav-shadow), 0 4px 20px rgba(255, 200, 50, 0.3);
+  border: none;
   position: relative;
   overflow: hidden;
 }
 
 .dark .liquid-glass-navbar {
-  background: linear-gradient(90deg, 
-    rgba(30, 58, 138, 0.95) 0%, 
-    rgba(59, 130, 246, 0.95) 25%, 
-    rgba(96, 165, 250, 0.95) 50%, 
-    rgba(59, 130, 246, 0.95) 75%, 
-    rgba(30, 58, 138, 0.95) 100%);
-  background-size: 200% 100%;
-  animation: gradientFlow 8s linear infinite;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.6);
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  --nav-radial-inner: #3b82f6;
+  --nav-radial-outer: #60a5fa;
+  --nav-shadow: rgba(59, 130, 246, 0.6);
+  --nav-shadow-inset-top: rgba(59, 130, 246, 0.9);
+  --nav-shadow-inset-bottom: rgba(96, 165, 250, 0.8);
+  --nav-color-1: rgba(147, 197, 253, 0.7);
+  --nav-color-2: rgba(59, 130, 246, 0.8);
+  --nav-color-3: rgba(129, 140, 248, 0.8);
+  --nav-color-4: rgba(191, 219, 254, 0.7);
+  
+  box-shadow: 0 0 20px var(--nav-shadow), 0 4px 20px rgba(59, 130, 246, 0.4);
 }
 
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+/* Hover effect - speed up animations */
+.liquid-glass-navbar:hover {
+  --nav-duration: 1.4s;
+}
+
+/* Inset Shadow for Depth */
+.navbar-inset-shadow {
+  z-index: 3;
+  box-shadow: inset 0 3px 12px var(--nav-shadow-inset-top),
+              inset 0 -3px 4px var(--nav-shadow-inset-bottom);
+}
+
+/* Particles Wrapper */
+.navbar-particles-wrapper {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+}
+
+/* Animated Particles */
+.navbar-particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  filter: blur(8px);
+  transform: translateZ(0);
+  animation-duration: var(--nav-duration);
+  animation-timing-function: var(--nav-easing);
+  animation-iteration-count: infinite;
+}
+
+/* Particle Colors and Blur */
+.navbar-particle.particle-1,
+.navbar-particle.particle-9,
+.navbar-particle.particle-10 {
+  background: var(--nav-color-4);
+}
+
+.navbar-particle.particle-3,
+.navbar-particle.particle-4 {
+  background: var(--nav-color-2);
+  filter: blur(14px);
+}
+
+.navbar-particle.particle-5,
+.navbar-particle.particle-6 {
+  background: var(--nav-color-3);
+  filter: blur(16px);
+}
+
+.navbar-particle.particle-2,
+.navbar-particle.particle-7,
+.navbar-particle.particle-8,
+.navbar-particle.particle-11,
+.navbar-particle.particle-12 {
+  background: var(--nav-color-1);
+  filter: blur(12px);
+}
+
+/* Particle Animations */
+.navbar-particle.particle-1 { animation-name: navParticle1; }
+.navbar-particle.particle-2 { animation-name: navParticle2; }
+.navbar-particle.particle-3 { animation-name: navParticle3; }
+.navbar-particle.particle-4 { animation-name: navParticle4; }
+.navbar-particle.particle-5 { animation-name: navParticle5; }
+.navbar-particle.particle-6 { animation-name: navParticle6; }
+.navbar-particle.particle-7 { animation-name: navParticle7; }
+.navbar-particle.particle-8 { animation-name: navParticle8; }
+.navbar-particle.particle-9 { animation-name: navParticle9; }
+.navbar-particle.particle-10 { animation-name: navParticle10; }
+.navbar-particle.particle-11 { animation-name: navParticle11; }
+.navbar-particle.particle-12 { animation-name: navParticle12; }
+
+@keyframes navParticle1 {
+  0% { transform: translate(0px, -40px) translateZ(0); }
+  33% { transform: translate(0px, 16px) translateZ(0); }
+  66% { transform: translate(12px, 64px) translateZ(0); }
+  100% { transform: translate(0px, -40px) translateZ(0); }
+}
+
+@keyframes navParticle2 {
+  0% { transform: translate(92px, 8px) translateZ(0); }
+  33% { transform: translate(80px, -10px) translateZ(0); }
+  66% { transform: translate(72px, -48px) translateZ(0); }
+  100% { transform: translate(92px, 8px) translateZ(0); }
+}
+
+@keyframes navParticle3 {
+  0% { transform: translate(-12px, -12px) translateZ(0); }
+  33% { transform: translate(20px, 12px) translateZ(0); }
+  66% { transform: translate(12px, 4px) translateZ(0); }
+  100% { transform: translate(-12px, -12px) translateZ(0); }
+}
+
+@keyframes navParticle4 {
+  0% { transform: translate(80px, -12px) translateZ(0); }
+  33% { transform: translate(76px, -12px) translateZ(0); }
+  66% { transform: translate(112px, -8px) translateZ(0); }
+  100% { transform: translate(80px, -12px) translateZ(0); }
+}
+
+@keyframes navParticle5 {
+  0% { transform: translate(12px, -4px) translateZ(0); }
+  33% { transform: translate(84px, 28px) translateZ(0); }
+  66% { transform: translate(40px, -32px) translateZ(0); }
+  100% { transform: translate(12px, -4px) translateZ(0); }
+}
+
+@keyframes navParticle6 {
+  0% { transform: translate(56px, 16px) translateZ(0); }
+  33% { transform: translate(28px, -16px) translateZ(0); }
+  66% { transform: translate(76px, -56px) translateZ(0); }
+  100% { transform: translate(56px, 16px) translateZ(0); }
+}
+
+@keyframes navParticle7 {
+  0% { transform: translate(8px, 28px) translateZ(0); }
+  33% { transform: translate(8px, 28px) translateZ(0); }
+  66% { transform: translate(20px, -60px) translateZ(0); }
+  100% { transform: translate(8px, 28px) translateZ(0); }
+}
+
+@keyframes navParticle8 {
+  0% { transform: translate(28px, -4px) translateZ(0); }
+  33% { transform: translate(32px, -4px) translateZ(0); }
+  66% { transform: translate(56px, -20px) translateZ(0); }
+  100% { transform: translate(28px, -4px) translateZ(0); }
+}
+
+@keyframes navParticle9 {
+  0% { transform: translate(20px, -12px) translateZ(0); }
+  33% { transform: translate(20px, -12px) translateZ(0); }
+  66% { transform: translate(80px, -8px) translateZ(0); }
+  100% { transform: translate(20px, -12px) translateZ(0); }
+}
+
+@keyframes navParticle10 {
+  0% { transform: translate(64px, 16px) translateZ(0); }
+  33% { transform: translate(68px, 20px) translateZ(0); }
+  66% { transform: translate(100px, 28px) translateZ(0); }
+  100% { transform: translate(64px, 16px) translateZ(0); }
+}
+
+@keyframes navParticle11 {
+  0% { transform: translate(4px, 4px) translateZ(0); }
+  33% { transform: translate(4px, 4px) translateZ(0); }
+  66% { transform: translate(68px, 20px) translateZ(0); }
+  100% { transform: translate(4px, 4px) translateZ(0); }
+}
+
+@keyframes navParticle12 {
+  0% { transform: translate(52px, 4px) translateZ(0); }
+  33% { transform: translate(56px, 0px) translateZ(0); }
+  66% { transform: translate(60px, -32px) translateZ(0); }
+  100% { transform: translate(52px, 4px) translateZ(0); }
 }
 
 /* Logo visibility - dark in light mode, white in dark mode */
@@ -1519,4 +1679,41 @@ MATED CIRCLES FOR NAVBAR */
 .dark .navbar-circles .circle.circle-11,
 .dark .navbar-circles .circle.circle-12 {
   background: rgba(147, 197, 253, 0.7);
+}
+
+
+/* Nav Items with UIVERSE-style hover effect */
+.liquid-glass-navbar nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.liquid-glass-navbar nav a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(255, 223, 87, 0.6);
+}
+
+.dark .liquid-glass-navbar nav a:hover {
+  text-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+}
+
+/* Nav item glow effect on hover */
+.liquid-glass-navbar nav a::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  background: radial-gradient(circle, rgba(255, 223, 87, 0.3), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.liquid-glass-navbar nav a:hover::before {
+  opacity: 1;
+}
+
+.dark .liquid-glass-navbar nav a::before {
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.3), transparent 70%);
 }
