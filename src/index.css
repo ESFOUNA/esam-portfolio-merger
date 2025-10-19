@@ -672,7 +672,7 @@ body,
   }
 }
 
-/* Premium UIVERSE-Style Animated Navbar */
+/* Premium UIVERSE-Style Animated Navbar - DESKTOP (FULLY OPAQUE) */
 .liquid-glass-navbar {
   --nav-duration: 7s;
   --nav-easing: linear;
@@ -683,8 +683,8 @@ body,
   --nav-shadow: rgba(255, 223, 87, 0.5);
   --nav-shadow-inset-top: rgba(255, 223, 52, 0.9);
   --nav-shadow-inset-bottom: rgba(255, 250, 215, 0.8);
-  --nav-radial-inner: rgba(255, 210, 21, 0.85);
-  --nav-radial-outer: rgba(255, 241, 114, 0.75);
+  --nav-radial-inner: #ffd215;
+  --nav-radial-outer: #fff172;
   
   background: radial-gradient(circle, var(--nav-radial-inner), var(--nav-radial-outer) 80%);
   box-shadow: 0 0 20px var(--nav-shadow), 0 4px 20px rgba(255, 200, 50, 0.3);
@@ -695,8 +695,8 @@ body,
 }
 
 .dark .liquid-glass-navbar {
-  --nav-radial-inner: rgba(59, 130, 246, 0.85);
-  --nav-radial-outer: rgba(96, 165, 250, 0.75);
+  --nav-radial-inner: #3b82f6;
+  --nav-radial-outer: #60a5fa;
   --nav-shadow: rgba(59, 130, 246, 0.6);
   --nav-shadow-inset-top: rgba(59, 130, 246, 0.9);
   --nav-shadow-inset-bottom: rgba(96, 165, 250, 0.8);
@@ -1780,21 +1780,25 @@ MATED CIRCLES FOR NAVBAR */
     filter: blur(5px) !important;
   }
   
-  /* Lighter, more refined gradient - SEMI-TRANSPARENT */
+  /* MOBILE ONLY - Semi-transparent background so animations show through */
   .liquid-glass-navbar {
+    --nav-radial-inner: rgba(255, 210, 21, 0.85) !important;
+    --nav-radial-outer: rgba(255, 241, 114, 0.75) !important;
     background: radial-gradient(
       circle, 
-      rgba(255, 210, 21, 0.75), 
-      rgba(255, 241, 114, 0.65) 80%
+      var(--nav-radial-inner), 
+      var(--nav-radial-outer) 80%
     ) !important;
     box-shadow: 0 0 10px rgba(255, 223, 87, 0.3) !important;
   }
   
   .dark .liquid-glass-navbar {
+    --nav-radial-inner: rgba(59, 130, 246, 0.85) !important;
+    --nav-radial-outer: rgba(96, 165, 250, 0.75) !important;
     background: radial-gradient(
       circle, 
-      rgba(59, 130, 246, 0.75), 
-      rgba(96, 165, 250, 0.65) 80%
+      var(--nav-radial-inner), 
+      var(--nav-radial-outer) 80%
     ) !important;
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.3) !important;
   }
