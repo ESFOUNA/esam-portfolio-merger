@@ -97,7 +97,7 @@ export function Navbar() {
         {/* Inset Shadow Overlay for Depth */}
         <div className="absolute inset-0 rounded-3xl pointer-events-none navbar-inset-shadow"></div>
 
-        <div className="flex items-center justify-between relative z-10 w-full">
+        <div className="flex items-center justify-between relative z-20 w-full">
           {/* Left: Logo */}
           <Link to="/" className="flex items-center group">
             <motion.div

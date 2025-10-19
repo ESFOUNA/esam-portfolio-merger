@@ -683,19 +683,20 @@ body,
   --nav-shadow: rgba(255, 223, 87, 0.5);
   --nav-shadow-inset-top: rgba(255, 223, 52, 0.9);
   --nav-shadow-inset-bottom: rgba(255, 250, 215, 0.8);
-  --nav-radial-inner: #ffd215;
-  --nav-radial-outer: #fff172;
+  --nav-radial-inner: rgba(255, 210, 21, 0.85);
+  --nav-radial-outer: rgba(255, 241, 114, 0.75);
   
   background: radial-gradient(circle, var(--nav-radial-inner), var(--nav-radial-outer) 80%);
   box-shadow: 0 0 20px var(--nav-shadow), 0 4px 20px rgba(255, 200, 50, 0.3);
   border: none;
   position: relative;
   overflow: hidden;
+  z-index: 50;
 }
 
 .dark .liquid-glass-navbar {
-  --nav-radial-inner: #3b82f6;
-  --nav-radial-outer: #60a5fa;
+  --nav-radial-inner: rgba(59, 130, 246, 0.85);
+  --nav-radial-outer: rgba(96, 165, 250, 0.75);
   --nav-shadow: rgba(59, 130, 246, 0.6);
   --nav-shadow-inset-top: rgba(59, 130, 246, 0.9);
   --nav-shadow-inset-bottom: rgba(96, 165, 250, 0.8);
@@ -714,15 +715,18 @@ body,
 
 /* Inset Shadow for Depth */
 .navbar-inset-shadow {
-  z-index: 3;
+  z-index: 10;
   box-shadow: inset 0 3px 12px var(--nav-shadow-inset-top),
               inset 0 -3px 4px var(--nav-shadow-inset-bottom);
+  pointer-events: none;
 }
 
-/* Particles Wrapper */
+/* Particles Wrapper - Behind content but above background */
 .navbar-particles-wrapper {
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   mask-image: radial-gradient(white, black);
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Animated Particles - Spread Across Full Width */
@@ -736,6 +740,8 @@ body,
   animation-duration: var(--nav-duration);
   animation-timing-function: var(--nav-easing);
   animation-iteration-count: infinite;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Position particles across full navbar width */
@@ -1774,12 +1780,12 @@ MATED CIRCLES FOR NAVBAR */
     filter: blur(5px) !important;
   }
   
-  /* Lighter, more refined gradient */
+  /* Lighter, more refined gradient - SEMI-TRANSPARENT */
   .liquid-glass-navbar {
     background: radial-gradient(
       circle, 
-      rgba(255, 210, 21, 0.4), 
-      rgba(255, 241, 114, 0.3) 80%
+      rgba(255, 210, 21, 0.75), 
+      rgba(255, 241, 114, 0.65) 80%
     ) !important;
     box-shadow: 0 0 10px rgba(255, 223, 87, 0.3) !important;
   }
@@ -1787,8 +1793,8 @@ MATED CIRCLES FOR NAVBAR */
   .dark .liquid-glass-navbar {
     background: radial-gradient(
       circle, 
-      rgba(59, 130, 246, 0.4), 
-      rgba(96, 165, 250, 0.3) 80%
+      rgba(59, 130, 246, 0.75), 
+      rgba(96, 165, 250, 0.65) 80%
     ) !important;
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.3) !important;
   }
@@ -1810,21 +1816,21 @@ MATED CIRCLES FOR NAVBAR */
     z-index: 1;
   }
   
-  /* Lighter particle colors for mobile */
+  /* More visible particle colors for mobile */
   .navbar-particle.particle-1,
   .navbar-particle.particle-9,
   .navbar-particle.particle-10 {
-    background: rgba(255, 232, 26, 0.4) !important;
+    background: rgba(255, 232, 26, 0.7) !important;
   }
   
   .navbar-particle.particle-3,
   .navbar-particle.particle-4 {
-    background: rgba(26, 35, 255, 0.4) !important;
+    background: rgba(26, 35, 255, 0.7) !important;
   }
   
   .navbar-particle.particle-5,
   .navbar-particle.particle-6 {
-    background: rgba(226, 27, 218, 0.4) !important;
+    background: rgba(226, 27, 218, 0.7) !important;
   }
   
   .navbar-particle.particle-2,
@@ -1832,7 +1838,7 @@ MATED CIRCLES FOR NAVBAR */
   .navbar-particle.particle-8,
   .navbar-particle.particle-11,
   .navbar-particle.particle-12 {
-    background: rgba(255, 163, 26, 0.4) !important;
+    background: rgba(255, 163, 26, 0.7) !important;
   }
 }
 
