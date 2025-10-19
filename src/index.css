@@ -1738,20 +1738,21 @@ MATED CIRCLES FOR NAVBAR */
 }
 
 
-/* MOBILE FIXES - Refined and Animated */
+/* MOBILE FIXES - Continuous Animation (No Hover Required) */
 @media (max-width: 768px) {
-  /* Ensure animations are NOT disabled on mobile */
+  /* Use fast animation speed always on mobile - no hover needed */
   .liquid-glass-navbar {
-    --nav-duration: 7s !important;
-    animation: none; /* Remove any conflicting animations */
+    --nav-duration: 1.4s !important;
+    animation: none;
   }
   
-  /* Force particles to animate on mobile */
+  /* Force particles to animate continuously on mobile */
   .navbar-particle {
     width: 30px !important;
     height: 30px !important;
-    opacity: 0.5 !important;
+    opacity: 0.6 !important;
     animation-play-state: running !important;
+    animation-duration: 1.4s !important;
     will-change: transform;
   }
   
