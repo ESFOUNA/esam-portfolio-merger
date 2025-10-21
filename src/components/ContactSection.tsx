@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, Linkedin, Github, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -32,56 +31,39 @@ export function ContactSection() {
     setError('');
 
     try {
-      // Import EmailJS configuration
-      const { serviceId, templateId, publicKey } = await import('@/config/emailjs').then(m => m.emailjsConfig);
+      // Use Web3Forms with proper UUID access key
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '0ea626bc-947a-4865-8ed0-05650a735f1a',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Portfolio Contact: Message from ${formData.name}`,
+          from_name: formData.name,
+          to_email: 'esfouna.am@gmail.com'
+        })
+      });
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        to_email: 'esfouna.am@gmail.com',
-        message: formData.message,
-        subject: `Portfolio Contact: Message from ${formData.name}`
-      };
+      const result = await response.json();
 
-      // Try EmailJS first
-      try {
-        await emailjs.send(serviceId, templateId, templateParams, publicKey);
-        setIsSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-        }, 5000);
-      } catch (emailError) {
-        // Fallback to mailto if EmailJS fails
-        console.log('EmailJS failed, using mailto fallback');
-        
-        const subject = encodeURIComponent(`Portfolio Contact: Message from ${formData.name}`);
-        const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-
-Message:
-${formData.message}
-
----
-Sent from your portfolio contact form
-        `);
-        
-        const mailtoLink = `mailto:esfouna.am@gmail.com?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
-        
+      if (result.success) {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
         
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
+      } else {
+        throw new Error(result.message || 'Failed to send message');
       }
     } catch (err) {
-      setError('Failed to send message. Please try again or contact me directly.');
       console.error('Contact form error:', err);
+      setError('Failed to send message. Please try again or contact me directly via email.');
     } finally {
       setIsSubmitting(false);
     }
@@ -170,6 +152,11 @@ Sent from your portfolio contact form
           <div className="animate-on-scroll">
             <div className="glass rounded-xl p-4 sm:p-6 shadow-lg">
               <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Send Me a Message</h3>
+              <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg">
+                <p className="text-sm text-blue-700 dark:text-blue-300">
+                  💌 Send me a message directly! I'll receive it in my inbox and respond within 24 hours.
+                </p>
+              </div>
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
@@ -214,7 +201,7 @@ Sent from your portfolio contact form
                   <div className="flex items-center gap-2 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg">
                     <CheckCircle className="h-5 w-5 text-green-600" />
                     <span className="text-sm text-green-700 dark:text-green-300">
-                      Message sent successfully! I'll get back to you soon.
+                      ✅ Message sent successfully! I'll get back to you within 24 hours.
                     </span>
                   </div>
                 )}
@@ -236,7 +223,7 @@ Sent from your portfolio contact form
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Opening Email...
+                      Copying Message...
                     </>
                   ) : (
                     <>
