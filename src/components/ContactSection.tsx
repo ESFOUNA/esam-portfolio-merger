@@ -1,13 +1,94 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // Clear error when user starts typing
+    if (error) setError('');
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      // Import EmailJS configuration
+      const { serviceId, templateId, publicKey } = await import('@/config/emailjs').then(m => m.emailjsConfig);
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        to_email: 'esfouna.am@gmail.com',
+        message: formData.message,
+        subject: `Portfolio Contact: Message from ${formData.name}`
+      };
+
+      // Try EmailJS first
+      try {
+        await emailjs.send(serviceId, templateId, templateParams, publicKey);
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } catch (emailError) {
+        // Fallback to mailto if EmailJS fails
+        console.log('EmailJS failed, using mailto fallback');
+        
+        const subject = encodeURIComponent(`Portfolio Contact: Message from ${formData.name}`);
+        const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}
+
+---
+Sent from your portfolio contact form
+        `);
+        
+        const mailtoLink = `mailto:esfouna.am@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+        
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      }
+    } catch (err) {
+      setError('Failed to send message. Please try again or contact me directly.');
+      console.error('Contact form error:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-8 sm:py-12 md:py-20 bg-transparent">
+    <section id="contact" className="min-h-screen flex items-start justify-center pt-20 pb-8 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-center mb-8 sm:mb-12 animate-on-scroll">
           Contact Me
@@ -26,10 +107,10 @@ export function ContactSection() {
                   <div>
                     <p className="text-sm font-medium">Email</p>
                     <a 
-                      href="mailto:esfounaa@gmail.com"
+                      href="mailto:esfouna.am@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      esfounaa@gmail.com
+                      esfouna.am@gmail.com
                     </a>
                   </div>
                 </div>
@@ -41,10 +122,10 @@ export function ContactSection() {
                   <div>
                     <p className="text-sm font-medium">Phone</p>
                     <a 
-                      href="tel:+212698397601"
+                      href="tel:+212658974091"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +212 698397601
+                      +212 658974091
                     </a>
                   </div>
                 </div>
@@ -90,24 +171,79 @@ export function ContactSection() {
             <div className="glass rounded-xl p-4 sm:p-6 shadow-lg">
               <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Send Me a Message</h3>
               
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">Name</label>
-                  <Input id="name" placeholder="Your name" />
+                  <label htmlFor="name" className="text-sm font-medium">Name *</label>
+                  <Input 
+                    id="name" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Your name" 
+                    required
+                  />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <Input id="email" type="email" placeholder="Your email" />
+                  <label htmlFor="email" className="text-sm font-medium">Email *</label>
+                  <Input 
+                    id="email" 
+                    name="email"
+                    type="email" 
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Your email" 
+                    required
+                  />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">Message</label>
-                  <Textarea id="message" placeholder="Your message" rows={5} />
+                  <label htmlFor="message" className="text-sm font-medium">Message *</label>
+                  <Textarea 
+                    id="message" 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Your message" 
+                    rows={5} 
+                    required
+                  />
                 </div>
                 
-                <Button type="submit" className="w-full">
-                  Send Message
+                {isSubmitted && (
+                  <div className="flex items-center gap-2 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg">
+                    <CheckCircle className="h-5 w-5 text-green-600" />
+                    <span className="text-sm text-green-700 dark:text-green-300">
+                      Message sent successfully! I'll get back to you soon.
+                    </span>
+                  </div>
+                )}
+                
+                {error && (
+                  <div className="flex items-center gap-2 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-lg">
+                    <AlertCircle className="h-5 w-5 text-red-600" />
+                    <span className="text-sm text-red-700 dark:text-red-300">
+                      {error}
+                    </span>
+                  </div>
+                )}
+                
+                <Button 
+                  type="submit" 
+                  className="w-full" 
+                  disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Opening Email...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </div>

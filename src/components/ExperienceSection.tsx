@@ -129,7 +129,7 @@ export function ExperienceSection() {
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
 
   return (
-    <section className="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>

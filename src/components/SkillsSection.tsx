@@ -96,7 +96,7 @@ export function SkillsSection() {
   const selectedCategoryData = categories.find(cat => cat.id === selectedCategory);
 
   return (
-    <section id="skills" className="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+    <section id="skills" className="py-16 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>

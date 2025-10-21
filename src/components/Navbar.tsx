@@ -90,7 +90,7 @@ export function Navbar() {
             }
           }}
           // IMPORTANT : Supprimez 'animate-fluid-float' de la liste des classes
-          className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 py-3 px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl"
+          className="fixed top-2 left-1/2 transform -translate-x-1/2 z-50 py-3 px-6 liquid-glass-navbar shadow-2xl transition-all duration-500 ease-in-out rounded-3xl"
           style={{
             width: 'clamp(280px, 90vw, 1000px)',
             willChange: 'transform'

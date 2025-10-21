@@ -110,7 +110,7 @@ export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section className="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+    <section className="pt-4 pb-16 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500/5 rounded-full blur-3xl"></div>
@@ -120,7 +120,7 @@ export function ProjectsSection() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

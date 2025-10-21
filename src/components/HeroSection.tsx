@@ -57,7 +57,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-start justify-center pt-32 pb-20 overflow-hidden"
+      className="relative min-h-screen flex items-start justify-center pt-24 pb-20 overflow-hidden"
       ref={sectionRef}
     >
       <div className="absolute inset-0 z-0 bg-gray-50 dark:bg-gray-900"></div>
