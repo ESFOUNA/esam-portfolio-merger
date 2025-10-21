@@ -57,7 +57,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden"
+      className="relative min-h-screen flex items-start justify-center pt-32 pb-20 overflow-hidden"
       ref={sectionRef}
     >
       <div className="absolute inset-0 z-0 bg-gray-50 dark:bg-gray-900"></div>
@@ -115,48 +115,16 @@ export function HeroSection() {
               <motion.h2 variants={item} className="text-xl md:text-2xl font-medium text-muted-foreground mb-8">
                 Software Engineering Student
               </motion.h2>
-              <motion.p variants={item} className="text-lg text-muted-foreground mb-10">
+              <motion.p variants={item} className="text-lg text-muted-foreground">
                 I possess a keen talent for identifying and solving technological problems.
                 With a strong work ethic and a natural ability to learn, I'm dedicated to creating
                 innovative solutions through technology.
               </motion.p>
-              <motion.div variants={item}>
-                <Button
-                  onClick={scrollToAbout}
-                  className="group"
-                  size="lg"
-                >
-                  Learn More
-                  <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-                </Button>
-              </motion.div>
             </motion.div>
           </TiltCard>
         </div>
       </div>
-      
-      <motion.div 
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ 
-          opacity: 1, 
-          y: 0,
-          transition: { 
-            delay: 1.5,
-            duration: 0.5 
-          } 
-        }}
-      >
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          onClick={scrollToAbout} 
-          aria-label="Scroll down"
-          className="animate-bounce"
-        >
-          <ArrowDown className="h-6 w-6" />
-        </Button>
-      </motion.div>
+
     </section>
   );
 }
