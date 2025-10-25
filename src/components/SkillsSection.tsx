@@ -7,33 +7,32 @@ interface Skill {
   category: 'languages' | 'frameworks' | 'web' | 'distributed' | 'desktop';
   image: string;
   description: string;
-  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
 }
 
 const skills: Skill[] = [
-  { name: 'Java', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', description: 'Object-oriented programming language', level: 'Expert' },
-  { name: 'JavaScript', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', description: 'Dynamic web programming language', level: 'Advanced' },
-  { name: 'C++', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', description: 'High-performance system programming', level: 'Advanced' },
-  { name: 'C', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', description: 'Low-level system programming', level: 'Advanced' },
-  { name: 'Python', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', description: 'Versatile scripting and data science', level: 'Intermediate' },
-  { name: 'Rust', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg', description: 'Memory-safe systems programming', level: 'Intermediate' },
+  { name: 'Java', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', description: 'Object-oriented programming language' },
+  { name: 'JavaScript', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', description: 'Dynamic web programming language' },
+  { name: 'C++', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', description: 'High-performance system programming' },
+  { name: 'C', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', description: 'Low-level system programming' },
+  { name: 'Python', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', description: 'Versatile scripting and data science' },
+  { name: 'Rust', category: 'languages', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg', description: 'Memory-safe systems programming' },
   
-  { name: 'HTML5', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', description: 'Modern web markup language', level: 'Expert' },
-  { name: 'CSS3', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', description: 'Advanced styling and animations', level: 'Advanced' },
-  { name: 'Angular', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg', description: 'Full-featured web framework', level: 'Intermediate' },
-  { name: 'React', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', description: 'Component-based UI library', level: 'Intermediate' },
-  { name: 'PHP', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', description: 'Server-side web development', level: 'Advanced' },
+  { name: 'HTML5', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', description: 'Modern web markup language' },
+  { name: 'CSS3', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', description: 'Advanced styling and animations' },
+  { name: 'Angular', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg', description: 'Full-featured web framework' },
+  { name: 'React', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', description: 'Component-based UI library' },
+  { name: 'PHP', category: 'web', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', description: 'Server-side web development' },
   
-  { name: 'Spring Boot', category: 'frameworks', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg', description: 'Java enterprise framework', level: 'Intermediate' },
-  { name: 'Java EE', category: 'frameworks', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain-wordmark.svg', description: 'Enterprise Java platform', level: 'Intermediate' },
+  { name: 'Spring Boot', category: 'frameworks', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg', description: 'Java enterprise framework' },
+  { name: 'Java EE', category: 'frameworks', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain-wordmark.svg', description: 'Enterprise Java platform' },
   
-  { name: 'Linux', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', description: 'Unix-like operating system', level: 'Intermediate' },
-  { name: 'MySQL', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', description: 'Relational database management', level: 'Advanced' },
-  { name: 'Kubernetes', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg', description: 'Container orchestration platform', level: 'Beginner' },
-  { name: 'Docker', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', description: 'Containerization platform', level: 'Beginner' },
-  { name: 'Oracle', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg', description: 'Enterprise database system', level: 'Intermediate' },
+  { name: 'Linux', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', description: 'Unix-like operating system' },
+  { name: 'MySQL', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', description: 'Relational database management' },
+  { name: 'Kubernetes', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg', description: 'Container orchestration platform' },
+  { name: 'Docker', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', description: 'Containerization platform' },
+  { name: 'Oracle', category: 'distributed', image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg', description: 'Enterprise database system' },
   
-  { name: 'Tauri', category: 'desktop', image: 'https://tauri.app/meta/favicon-96x96.png', description: 'Rust-based desktop app framework', level: 'Intermediate' },
+  { name: 'Tauri', category: 'desktop', image: 'https://tauri.app/meta/favicon-96x96.png', description: 'Rust-based desktop app framework' },
 ];
 
 const categories = [
@@ -79,12 +78,7 @@ const categories = [
   }
 ];
 
-const levelColors = {
-  'Beginner': 'from-yellow-400 to-orange-500',
-  'Intermediate': 'from-blue-400 to-blue-600',
-  'Advanced': 'from-green-400 to-green-600',
-  'Expert': 'from-purple-500 to-purple-700'
-};
+
 
 export function SkillsSection() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -248,9 +242,6 @@ export function SkillsSection() {
                           </motion.div>
                           <div>
                             <h4 className="font-bold text-lg text-gray-800 dark:text-gray-200 group-hover:text-primary transition-colors duration-300">{skill.name}</h4>
-                            <div className={`inline-block px-2 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${levelColors[skill.level]}`}>
-                              {skill.level}
-                            </div>
                           </div>
                         </div>
                         
