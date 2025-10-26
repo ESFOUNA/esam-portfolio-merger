@@ -27,7 +27,7 @@ export function AboutSection() {
           <div className="lg:col-span-2 glass rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
             <h3 className="text-xl font-bold mb-4 text-primary">Overview</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              I am a software engineering student at the Private University of Fez, specializing in problem-solving through technology. My academic journey has equipped me with a diverse set of skills in software development, allowing me to approach challenges with innovative solutions.
+              Je suis Mohammed Amine Esfouna, un futur Ingénieur Logiciel étudiant à l'Université Privée de Fès, spécialisé dans la résolution de problèmes grâce à la technologie. Mon parcours académique m'a doté d'un ensemble diversifié de compétences en développement logiciel, me permettant d'aborder les défis avec des solutions innovantes.
             </p>
             
             <div className="space-y-4">
