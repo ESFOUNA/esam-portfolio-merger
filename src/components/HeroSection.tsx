@@ -119,7 +119,7 @@ export function HeroSection() {
               className="text-center"
             >
               <motion.h1 variants={item} className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif tracking-tight mb-6">
-                Mohammed Amine ESFOUNA
+                Mohammed Amine Esfouna 
               </motion.h1>
               <motion.h2 variants={item} className="text-xl md:text-2xl font-medium text-muted-foreground mb-8">
                 Software Engineering Student

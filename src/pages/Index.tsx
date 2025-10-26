@@ -6,7 +6,7 @@ import FixedViewportLayout from '@/components/FixedViewportLayout';
 
 const Index = () => {
   useEffect(() => {
-    document.title = 'Mohammed Amine Esfouna - Full-Stack Software Engineer Portfolio';
+    document.title = 'Mohammed Amine Esfouna (Esam) - Full-Stack Software Engineer Portfolio';
     
     // Trigger animations immediately since we're not scrolling
     const elements = document.querySelectorAll('.animate-on-scroll');
